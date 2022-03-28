@@ -29,7 +29,7 @@ public class Item {
         FileWriter fileWriter = new FileWriter("Items\\ItemList.txt", true);
         fileWriter.write(this.name + "\n");
         fileWriter.write(this.sku + "\n");
-        fileWriter.write((int) this.price);
+        fileWriter.write((int) this.price + "\n");
         fileWriter.close();
     }
 

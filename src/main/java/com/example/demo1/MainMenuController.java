@@ -97,4 +97,14 @@ public class MainMenuController {
     void removeProduct(ActionEvent event) {
         System.out.println("Remove Product");
     }
+
+    @FXML
+    void settings(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,400);
+        stage.setScene(scene);
+        stage.setTitle("Configurations");
+        stage.show();
+    }
 }

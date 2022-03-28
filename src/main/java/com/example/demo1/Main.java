@@ -56,6 +56,7 @@ public class Main extends Application {
             i.setName(scanner.nextLine());
             i.setSku(scanner.nextLine());
             i.setPrice(scanner.nextDouble());
+            scanner.nextLine();
             items.add(i);
         }
     }
