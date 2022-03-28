@@ -6,19 +6,12 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ProductRecordsController">
    <children>
       <TextArea fx:id="textArea" editable="false" layoutX="40.0" layoutY="159.0" prefHeight="230.0" prefWidth="513.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="161.0" />
       <Separator layoutX="173.0" layoutY="199.0" prefHeight="3.2" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
-      <ImageView fitHeight="134.0" fitWidth="357.0" layoutX="122.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="C:\Users\ryanp\Desktop\demo1\src\main\java\com\example\demo1\logo.png" />
-         </image>
-      </ImageView>
       <Button layoutX="499.0" layoutY="80.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="87.0" text="Exit" AnchorPane.bottomAnchor="619.0" AnchorPane.leftAnchor="499.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="80.0" />
       <MenuBar layoutX="140.0" layoutY="-50.0" prefHeight="26.0" prefWidth="600.0" AnchorPane.bottomAnchor="699.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
