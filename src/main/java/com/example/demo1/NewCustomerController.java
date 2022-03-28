@@ -2,7 +2,6 @@ package com.example.demo1;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -12,18 +11,14 @@ public class NewCustomerController {
     private Scene scene;
 
     @FXML
-    private Label InvalidLabel;
+    private TextField address;
 
     @FXML
-    private TextField newAssociateAddress;
+    private TextField email;
 
     @FXML
-    private TextField newAssociateEmail;
+    private TextField name;
 
     @FXML
-    private TextField newAssociateName;
-
-    @FXML
-    private TextField newAssociatePhone;
-
+    private TextField phone;
 }

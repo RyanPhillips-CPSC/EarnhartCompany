@@ -15,6 +15,7 @@ public class Main extends Application {
 
     private static ArrayList<Associate> associates = new ArrayList<>();
     private static ArrayList<Customer> customers = new ArrayList<>();
+    private static ArrayList<Item> items = new ArrayList<>();
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -27,7 +28,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        //itemAssignment();
+        itemAssignment();
         orderIDAssignment();
         customerAssignment();
         associateAssignment();
@@ -44,6 +45,25 @@ public class Main extends Application {
         Order.setOrderID(scanner.nextInt());
     }
 
+    /**
+     *
+     * @throws FileNotFoundException
+     */
+    public static void itemAssignment() throws FileNotFoundException {
+        Scanner scanner = new Scanner(new FileReader("Items\\ItemList.txt"));
+        while (scanner.hasNextLine()) {
+            Item i = new Item();
+            i.setName(scanner.nextLine());
+            i.setSku(scanner.nextLine());
+            i.setPrice(scanner.nextDouble());
+            items.add(i);
+        }
+    }
+
+    /**
+     *
+     * @throws FileNotFoundException
+     */
     public static void associateAssignment() throws FileNotFoundException {
         Scanner scanner = new Scanner(new FileReader("Associates\\AssociateList"));
         while (scanner.hasNextLine()) {
@@ -102,5 +122,9 @@ public class Main extends Application {
 
     public static ArrayList<Customer> getCustomers() {
         return customers;
+    }
+
+    public static ArrayList<Item> getItems() {
+        return items;
     }
 }

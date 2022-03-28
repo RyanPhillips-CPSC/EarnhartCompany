@@ -27,31 +27,39 @@ public class MainMenuController {
 
     @FXML
     void newCustomer(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("NewCustomer.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 600,575);
-        stage.setScene(scene);
-        stage.setTitle("Customer Form");
-        stage.show();    }
+        System.out.println("New Customer");
+    }
 
     @FXML
-    void newProduct(ActionEvent event) {
-        System.out.println("New Product");
+    void newProduct(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("NewProduct.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,400);
+        stage.setScene(scene);
+        stage.setTitle("New Product Form");
+        stage.show();
     }
 
     @FXML
     void customerRecords(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("CustomerRecords.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 600,575);
+        scene = new Scene(root, 600,725);
         stage.setScene(scene);
-        stage.setTitle("Associate Form");
+        stage.setTitle("Customer Form");
+        stage.setY(30);
         stage.show();
     }
 
     @FXML
-    void productRecords(ActionEvent event) {
-        System.out.println("Product Records");
+    void productRecords(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ProductRecords.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,725);
+        stage.setScene(scene);
+        stage.setTitle("Product Form");
+        stage.setY(30);
+        stage.show();
     }
 
     @FXML

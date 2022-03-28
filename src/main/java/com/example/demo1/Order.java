@@ -10,7 +10,7 @@ public class Order {
     private int currentOrderID;
     private double total;
     private double tax;
-    private ArrayList<Item> orderItems = new ArrayList<Item>();
+    private ArrayList<Item> orderItems = new ArrayList<>();
 
     /**
      *

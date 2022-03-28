@@ -9,6 +9,14 @@ public class Item {
     private String sku;
     private double price;
 
+    public Item(String name, String sku, String price) {
+        this.name = name;
+        this.sku = sku;
+        this.price = Double.parseDouble(price);
+    }
+
+    public Item() {}
+
     public String getName() {
         return name;
     }
@@ -18,10 +26,10 @@ public class Item {
      * @throws IOException
      */
     public void writeItem() throws IOException {
-        FileWriter fileWriter = new FileWriter("Associates\\AssociateList", true);
+        FileWriter fileWriter = new FileWriter("Items\\ItemList.txt", true);
         fileWriter.write(this.name + "\n");
         fileWriter.write(this.sku + "\n");
-        fileWriter.write(this.price + "\n");
+        fileWriter.write((int) this.price);
         fileWriter.close();
     }
 
@@ -30,7 +38,7 @@ public class Item {
      * @throws IOException
      */
     public void rewriteItem() throws IOException {
-        FileWriter fileWriter = new FileWriter("Associates\\AssociateList");
+        FileWriter fileWriter = new FileWriter("Items\\ItemList.txt");
         fileWriter.write(this.name + "\n");
         fileWriter.write(this.sku + "\n");
         fileWriter.write(this.price + "\n");
