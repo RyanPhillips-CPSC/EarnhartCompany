@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.RemoveCustomerController">
    <children>
-      <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="600.0" AnchorPane.bottomAnchor="370.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="600.0" AnchorPane.bottomAnchor="374.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -37,7 +37,7 @@
             <Image url="C:\Users\ryanp\Desktop\demo1\src\main\java\com\example\demo1\logo.png" />
          </image>
       </ImageView>
-      <ListView fx:id="associateList" layoutX="200.0" layoutY="166.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="customerList" layoutX="200.0" layoutY="166.0" prefHeight="200.0" prefWidth="200.0" />
       <Button layoutX="516.0" layoutY="79.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="47.0" text="Exit" />
    </children>
 </AnchorPane>
