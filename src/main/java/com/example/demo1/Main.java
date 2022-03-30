@@ -30,7 +30,7 @@ public class Main extends Application {
     public static void main(String[] args) throws FileNotFoundException {
         itemAssignment();
         orderIDAssignment();
-        customerAssignment();
+        customerAssignment(); //TODO -- CUSTOMER ASSIGNMENT IS DEFECTIVE --
         associateAssignment();
         launch();
         System.out.println("GUI HAS BEEN CLOSED");

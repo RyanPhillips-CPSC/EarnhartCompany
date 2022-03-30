@@ -6,25 +6,9 @@ ryanphillipsmusic41@gmail.com
 1
 30.26
 3.28
-1
 Poster
 3740817081
 26.98
-Earnhart, Jack
-(540)-786-2905
-jearnhart@gmail.com
-7405 Catharpin Landing
-1
-2
-30.26
-3.28
-2
-Poster
-3740817081
-26.98
-Brick
-83148137
-2.99
 Phillips, Kassie
 (540)-786-4320
 kphil@gmail.com
@@ -33,30 +17,24 @@ kphil@gmail.com
 3
 2790.56
 50.49
-3
 Coat
 380472417
 59.99
 Trumpet
 12412
-2599
+2599.0
 Banana
 128934891274
 1.99
 4
 2790.56
 50.49
-3
 Coat
 380472417
 59.99
 Trumpet
 12412
-2599
+2599.0
 Banana
 128934891274
-1.99Earnhart, Jack
-(540)-903-0781
-jearnhart@outlook.com
-7405 Catharpin Landing
-0
+1.99

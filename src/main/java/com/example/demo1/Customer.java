@@ -42,7 +42,7 @@ public class Customer extends Person {
         fileWriter.write(this.phone + "\n");
         fileWriter.write(this.email + "\n");
         fileWriter.write(this.address + "\n");
-        fileWriter.write(this.getCustomerOrders().size() + "\n");
+        fileWriter.write(this.getCustomerOrders().size());
         for (int i = 0; i < this.getCustomerOrders().size(); i++){ //Write clients order info
             fileWriter.write(this.getCustomerOrders().get(i).getCurrentOrderID() + "\n");
             fileWriter.write(this.getCustomerOrders().get(i).getTotal() + "\n");
