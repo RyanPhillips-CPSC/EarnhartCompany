@@ -27,7 +27,12 @@ public class MainMenuController {
 
     @FXML
     void newCustomer(ActionEvent event) throws IOException {
-        System.out.println("New Customer");
+        Parent root = FXMLLoader.load(getClass().getResource("NewCustomerInfo.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,400);
+        stage.setScene(scene);
+        stage.setTitle("New Customer Form");
+        stage.show();
     }
 
     @FXML
@@ -94,8 +99,13 @@ public class MainMenuController {
     }
 
     @FXML
-    void removeProduct(ActionEvent event) {
-        System.out.println("Remove Product");
+    void removeProduct(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("RemoveProduct.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,400);
+        stage.setScene(scene);
+        stage.setTitle("Product Removal Form");
+        stage.show();
     }
 
     @FXML

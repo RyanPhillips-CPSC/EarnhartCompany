@@ -9,6 +9,12 @@ public class Customer extends Person {
     PaymentMethod paymentMethod;
     ArrayList<Order> customerOrders = new ArrayList<>();
 
+    public Customer(){}
+
+    public Customer(String cName, String cPhone, String cEmail, String cAddress) {
+        super(cName,cPhone,cEmail,cAddress);
+    }
+
     public PaymentMethod getPaymentMethod() {
         return paymentMethod;
     }
