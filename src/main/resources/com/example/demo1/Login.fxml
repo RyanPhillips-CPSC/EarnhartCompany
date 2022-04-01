@@ -39,9 +39,9 @@
       <Label layoutX="181.0" layoutY="204.0" prefHeight="18.0" prefWidth="74.0" text="UserID" AnchorPane.bottomAnchor="178.0" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="345.0" AnchorPane.topAnchor="204.0" />
       <Label layoutX="181.0" layoutY="245.0" prefHeight="18.0" prefWidth="74.0" text="Password" />
       <Label fx:id="InvalidLabel" layoutX="247.0" layoutY="356.0" prefHeight="30.0" prefWidth="107.0" text="*Invalid credentials" textFill="#f70505" visible="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="246.0" AnchorPane.topAnchor="356.0" />
-      <ImageView fitHeight="94.0" fitWidth="367.0" layoutX="134.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="myImageView" fitHeight="94.0" fitWidth="367.0" layoutX="134.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Images/LOGO%20(1).png" />
+            <Image url="@../../../../../Images/LOGO%20(1).png" />
          </image>
       </ImageView>
    </children>

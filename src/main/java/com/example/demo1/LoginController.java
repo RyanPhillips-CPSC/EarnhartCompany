@@ -3,21 +3,28 @@ package com.example.demo1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
     private Stage stage;
     private Scene scene;
 
-    //Login scene objects
+    @FXML
+    private ImageView myImageView;
+
     @FXML
     private Label InvalidLabel;
 
@@ -62,6 +69,17 @@ public class LoginController {
             InvalidLabel.setVisible(true); //display's message if the userId or password is invalid
             userIDLogin.setText("");
             passwordLogin.setText("");
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            Image logo = new Image(getClass().getResourceAsStream("logo.png"));
+            myImageView.setImage(logo);
+            myImageView.setVisible(true);
+        } catch (Exception e) {
+            System.out.println("Image Not Found");
         }
     }
 }

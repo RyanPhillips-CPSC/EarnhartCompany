@@ -12,6 +12,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class RemoveCustomerController implements Initializable {
@@ -22,6 +26,11 @@ public class RemoveCustomerController implements Initializable {
     @FXML
     private ListView<String> customerList;
 
+    /**
+     * Returns to main menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void exit(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -32,6 +41,11 @@ public class RemoveCustomerController implements Initializable {
         stage.show();
     }
 
+    /**
+     * Displays customer names inside a ListView
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         handleItemClicks();
@@ -41,22 +55,30 @@ public class RemoveCustomerController implements Initializable {
     }
 
     /**
-     * Removes the selected associate from the associates  ArrayLists, rewrites the .txt file, then switches
-     * back to the main menu scene.
+     * Removes the selected customer from the ArrayList and deletes their row on the client table
      */
     public void handleItemClicks() {
         customerList.setOnMouseClicked(event -> {
             String selectedName = customerList.getSelectionModel().getSelectedItem();
-            for (int i = 0; i < Main.getCustomers().size(); i++) {
-                if (Main.getCustomers().get(i).getName().equals(selectedName)) { Main.getCustomers().remove(i); }
-            } //Iterate though customers and remove the selected customer
-            for (int j = 0; j < Main.getCustomers().size(); j++) {
-                try {
-                    if (j == 0) Main.getCustomers().get(j).rewriteCustomer();//do not append on the first one, restart file
-                    else Main.getCustomers().get(j).writeCustomer();//append from 2nd on
-                } //rewrite the first customer, then append the rest
-                catch (IOException e) { e.printStackTrace(); }
+            String host = "jdbc:mysql://localhost:3306/clientInfo";
+            String user = "root";
+            String password = "aTundeAdjuah_22!";
+
+            //remove from ArrayList, then from table
+            for (int i = 0; i < Main.getCustomers().size(); i ++) {
+                if (selectedName.equals(Main.getCustomers().get(i).getName())) {
+                    Main.getCustomers().remove(i);
+                }
             }
+
+            try {
+                Connection connection = DriverManager.getConnection(host, user, password);
+                PreparedStatement preparedStatement = connection.prepareStatement("delete from client where Name = '"+selectedName+"'");
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println("ERROR -- CANNOT CONNECT TO DATABASE");
+            }
+
             Parent root = null;
             try {
                 root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));

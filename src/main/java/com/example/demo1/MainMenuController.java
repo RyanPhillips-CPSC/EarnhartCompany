@@ -10,6 +10,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * A series of ActionEvents used to switch scenes from the main menu
+ */
 public class MainMenuController {
 
     private Stage stage;
@@ -106,17 +109,5 @@ public class MainMenuController {
         stage.setScene(scene);
         stage.setTitle("Product Removal Form");
         stage.show();
-    }
-
-    @FXML
-    void settings(ActionEvent event) throws IOException {
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 600,400);
-        stage.setScene(scene);
-        stage.setTitle("Configurations");
-        stage.show();
-         */
     }
 }

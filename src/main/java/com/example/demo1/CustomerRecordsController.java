@@ -23,6 +23,11 @@ public class CustomerRecordsController implements Initializable {
     private TextArea textArea = new TextArea("Customer Records --------------------" +
             "----------------------------------------------------------\n\n");
 
+    /**
+     * Returns to the main menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void exit(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -34,7 +39,7 @@ public class CustomerRecordsController implements Initializable {
     }
 
     /**
-     * Iterate through each Customer recursively. (Customer -> Orders -> Items -> Loop)
+     * Iterate through each Customer recursively (Customer -> Orders -> Items -> repeat)
      * @param url
      * @param resourceBundle
      */

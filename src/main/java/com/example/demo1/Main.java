@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -30,7 +31,7 @@ public class Main extends Application {
     public static void main(String[] args) throws FileNotFoundException {
         itemAssignment();
         orderIDAssignment();
-        //customerAssignment(); //TODO -- CUSTOMER ASSIGNMENT IS DEFECTIVE --
+        customerAssignment();
         associateAssignment();
         launch();
         System.out.println("GUI HAS BEEN CLOSED");
@@ -81,40 +82,32 @@ public class Main extends Application {
     }
 
     /**
-     * Reads the CustomerList.txt and assigns Objects, variables, and ArrayLists in a specified order
-     * @throws FileNotFoundException
+     * Collects and stores customer information from a local database so the data can be easily accessed
+     * from other classes without having to connect to a database.
      */
-    public static void customerAssignment() throws FileNotFoundException {
-        Scanner scanner = new Scanner(new FileReader("Customers\\CustomerList.txt"));
-        while (scanner.hasNextLine()) {
-            Customer c = new Customer();
-            c.setName(scanner.nextLine());
-            c.setPhone(scanner.nextLine());
-            c.setEmail(scanner.nextLine());
-            c.setAddress(scanner.nextLine());
-            int x = scanner.nextInt();
-            for (int i = 0; i < x; i++) {
-                Order o = new Order();
-                o.setCurrentOrderID(scanner.nextInt());
-                o.setTotal(scanner.nextDouble());
-                o.setTax(scanner.nextDouble());
-                int y = scanner.nextInt();
-                c.getCustomerOrders().add(o);
-                for (int j = 0; j < y; j++) {
-                    Item it = new Item();
-                    scanner.nextLine();
-                    it.setName(scanner.nextLine());
-                    it.setSku(scanner.nextLine());
-                    it.setPrice(scanner.nextDouble());
-                    //If this is the last item run an extra line to adjust the scanner
-                    //If this is the last line in the file, do not adjust the scanner
-                    if (j == y - 1 && scanner.hasNextLine()) scanner.nextLine();
-                    o.getOrderItems().add(it);
-                }
+    public static void customerAssignment() {
+        String name, phone, email, address;
+
+        String host = "jdbc:mysql://localhost:3306/clientInfo";
+        String user = "root";
+        String password = "aTundeAdjuah_22!";
+
+        try {
+            Connection connection = DriverManager.getConnection(host, user, password);//Establishing connection
+            PreparedStatement statement = connection.prepareStatement("select * from client where client.Name <> 'null'");
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                name = ("" + resultSet.getObject("Name"));
+                phone = ("" + resultSet.getObject("Phone"));
+                email = ("" + resultSet.getObject("Email"));
+                address = ("" + resultSet.getObject("Address"));
+                Customer c = new Customer(name,phone,email,address);
+                customers.add(c);
             }
-            customers.add(c);
+        } catch (SQLException e) {
+            System.out.println("ERROR CONNECTING TO DATABASE OR EXECUTING QUERY");
         }
-        scanner.close();
     }
 
     public static ArrayList<Associate> getAssociates() {

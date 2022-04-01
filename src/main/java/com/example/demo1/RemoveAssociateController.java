@@ -22,6 +22,11 @@ public class RemoveAssociateController implements Initializable {
     @FXML
     private ListView<String> associateList;
 
+    /**
+     * Returns to the main menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void exit(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -32,6 +37,11 @@ public class RemoveAssociateController implements Initializable {
         stage.show();
     }
 
+    /**
+     * Displays associate names in a ListView
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         handleItemClicks();
