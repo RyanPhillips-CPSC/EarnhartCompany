@@ -20,7 +20,7 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Settings" />
+                    <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
@@ -30,7 +30,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" onAction="#helpDisplay" text="About" />
                   </items>
                 </Menu>
               </menus>
