@@ -3,7 +3,9 @@ package com.example.demo1;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -18,22 +20,35 @@ public class Main extends Application {
     private static ArrayList<Customer> customers = new ArrayList<>();
     private static ArrayList<Item> items = new ArrayList<>();
 
+    /**
+     * Sets important Stage properties and loads the initial Scene
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400, Color.TRANSPARENT);
         stage.setTitle("Associate Login");
         stage.setResizable(false);
         stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        scene.getStylesheets().add("style.css");
         stage.show();
     }
 
+    /**
+     * Calls data assignment methods and runs the GUI
+     * @param args
+     * @throws FileNotFoundException
+     */
     public static void main(String[] args) throws FileNotFoundException {
         itemAssignment();
         orderIDAssignment();
         customerAssignment();
         associateAssignment();
         launch();
+        //upon closing platform:
         System.out.println("GUI HAS BEEN CLOSED");
     }
 
@@ -113,11 +128,9 @@ public class Main extends Application {
     public static ArrayList<Associate> getAssociates() {
         return associates;
     }
-
     public static ArrayList<Customer> getCustomers() {
         return customers;
     }
-
     public static ArrayList<Item> getItems() {
         return items;
     }

@@ -7,42 +7,50 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.LoginController">
    <children>
-      <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="600.0" AnchorPane.bottomAnchor="370.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <Separator layoutX="173.0" layoutY="199.0" prefHeight="3.2" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
-      <Button layoutX="218.0" layoutY="311.0" mnemonicParsing="false" onAction="#submit" prefHeight="30.0" prefWidth="165.0" stylesheets="@../../../../java/com/example/demo1/Style.css" text="Sign In" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="217.0" AnchorPane.topAnchor="311.0" />
+      <HBox prefHeight="26.0" prefWidth="600.0">
+         <children>
+            <MenuBar opacity="0.9" prefHeight="26.0" prefWidth="565.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#helpDisplay" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <MenuBar fx:id="exitMenu" opacity="0.9" prefHeight="33.0" prefWidth="37.0" />
+         </children>
+      </HBox>
+      <Separator layoutX="173.0" layoutY="199.0" prefHeight="3.2" prefWidth="570.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="150.0" />
+      <Button layoutX="218.0" layoutY="311.0" mnemonicParsing="false" onAction="#submit" prefHeight="30.0" prefWidth="165.0" text="Sign In" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="217.0" AnchorPane.topAnchor="311.0" />
       <TextField fx:id="userIDLogin" layoutX="272.0" layoutY="200.0" />
       <TextField fx:id="passwordLogin" layoutX="272.0" layoutY="242.0" />
-      <Label layoutX="181.0" layoutY="204.0" prefHeight="18.0" prefWidth="74.0" text="UserID" AnchorPane.bottomAnchor="178.0" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="345.0" AnchorPane.topAnchor="204.0" />
-      <Label layoutX="181.0" layoutY="245.0" prefHeight="18.0" prefWidth="74.0" text="Password" />
-      <Label fx:id="InvalidLabel" layoutX="247.0" layoutY="356.0" prefHeight="30.0" prefWidth="107.0" text="*Invalid credentials" textFill="#f70505" visible="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="246.0" AnchorPane.topAnchor="356.0" />
-      <ImageView fx:id="myImageView" fitHeight="94.0" fitWidth="367.0" layoutX="134.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Images/LOGO%20(1).png" />
-         </image>
-      </ImageView>
+      <Label layoutX="181.0" layoutY="204.0" prefHeight="18.0" prefWidth="74.0" text="UserID" textFill="WHITE" AnchorPane.bottomAnchor="178.0" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="345.0" AnchorPane.topAnchor="204.0">
+         <font>
+            <Font name="Bodoni MT" size="14.0" />
+         </font></Label>
+      <Label layoutX="181.0" layoutY="245.0" prefHeight="18.0" prefWidth="74.0" text="Password" textFill="WHITE">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font></Label>
+      <Label fx:id="InvalidLabel" alignment="TOP_LEFT" layoutX="247.0" layoutY="356.0" prefHeight="30.0" prefWidth="165.0" text="*Invalid credentials" textFill="#f70505" visible="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="356.0" />
+      <ImageView fx:id="myImageView" fitHeight="157.0" fitWidth="417.0" layoutX="92.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
