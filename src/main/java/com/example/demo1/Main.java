@@ -78,21 +78,34 @@ public class Main extends Application {
     }
 
     /**
-     *
-     * @throws FileNotFoundException
+     * Collects and stores associate information from a local database so the data can be easily accessed
+     * from other classes without having to connect to a database.
      */
-    public static void associateAssignment() throws FileNotFoundException {
-        Scanner scanner = new Scanner(new FileReader("Associates\\AssociateList"));
-        while (scanner.hasNextLine()) {
-            Associate a = new Associate();
-            a.setName(scanner.nextLine());
-            a.setPhone(scanner.nextLine());
-            a.setEmail(scanner.nextLine());
-            a.setAddress(scanner.nextLine());
-            a.setUserID(scanner.nextLine());
-            a.setPassword(scanner.nextLine());
-            a.setAssociateTitle(AssociateTitle.valueOf(scanner.nextLine()));
-            associates.add(a);
+    public static void associateAssignment() {
+        String name, phone, email, address, userID, password, associateTitle;
+
+        String host = "jdbc:mysql://localhost:3306/clientInfo";
+        String user = "root";
+        String sqlPassword = "aTundeAdjuah_22!";
+
+        try {
+            Connection connection = DriverManager.getConnection(host, user, sqlPassword);//Establishing connection
+            PreparedStatement statement = connection.prepareStatement("select * from associate where associate.Name <> 'null'");
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                name = ("" + resultSet.getObject("Name"));
+                phone = ("" + resultSet.getObject("Phone"));
+                email = ("" + resultSet.getObject("Email"));
+                address = ("" + resultSet.getObject("Address"));
+                userID = ("" + resultSet.getObject("UserID"));
+                password = ("" + resultSet.getObject("Password"));
+                associateTitle = ("" + resultSet.getObject("AssociateTitle"));
+                Associate a = new Associate(name,phone,email,address,userID, password, associateTitle);
+                associates.add(a);
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR CONNECTING TO DATABASE OR EXECUTING QUERY");
         }
     }
 

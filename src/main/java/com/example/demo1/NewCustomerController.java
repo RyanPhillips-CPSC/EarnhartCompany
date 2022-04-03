@@ -120,12 +120,12 @@ public class NewCustomerController implements Initializable {
     }
 
     /**
-     * Saves the user's input into the database table (client) and returns to the main menu
+     * Saves user input into the database table (client) and returns to the main menu
      * @param event
      * @throws SQLException
      */
     @FXML
-    void submit(ActionEvent event) throws SQLException {
+    void submit(ActionEvent event) {
         if (helpPopup != null) { helpPopup.hide();}
         String name, email, phone, address;
         name = cName.getText();

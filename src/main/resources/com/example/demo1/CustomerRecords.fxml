@@ -13,9 +13,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.CustomerRecordsController">
    <children>
-      <TextArea fx:id="textArea" editable="false" layoutX="40.0" layoutY="159.0" prefHeight="230.0" prefWidth="513.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="161.0" />
+      <TextArea fx:id="textArea" editable="false" layoutX="40.0" layoutY="171.0" prefHeight="533.0" prefWidth="500.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="171.0" />
       <Separator layoutX="173.0" layoutY="199.0" prefHeight="3.2" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
-      <Button layoutX="499.0" layoutY="80.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="87.0" text="Exit" AnchorPane.bottomAnchor="619.0" AnchorPane.leftAnchor="499.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="80.0" />
+      <Button layoutX="528.0" layoutY="80.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="58.0" text="Return" AnchorPane.bottomAnchor="619.0" AnchorPane.leftAnchor="528.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="80.0" />
       <HBox>
          <children>
             <MenuBar prefHeight="26.0" prefWidth="565.0">

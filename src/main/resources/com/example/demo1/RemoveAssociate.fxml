@@ -6,31 +6,42 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.RemoveAssociateController">
    <children>
-      <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="600.0" AnchorPane.bottomAnchor="370.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
+      <HBox>
+         <children>
+            <MenuBar prefHeight="26.0" prefWidth="565.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings" />
+                        <MenuItem mnemonicParsing="false" onAction="#exit" text="Return" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#displayAbout" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <MenuBar fx:id="exitMenu" prefHeight="26.0" prefWidth="34.0" />
+         </children>
+      </HBox>
       <Separator layoutX="173.0" layoutY="199.0" prefHeight="3.2" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
       <ListView fx:id="associateList" layoutX="200.0" layoutY="166.0" prefHeight="200.0" prefWidth="200.0" />
       <Button layoutX="516.0" layoutY="79.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="47.0" text="Exit" />
+      <ImageView fx:id="myImageView" fitHeight="157.0" fitWidth="417.0" layoutX="92.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
