@@ -16,7 +16,7 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#returnToMain" text="Return" />
+                        <MenuItem mnemonicParsing="false" onAction="#returnToMain" text="Return" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
@@ -26,7 +26,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" onAction="#helpDisplay" text="About" />
                   </items>
                 </Menu>
               </menus>

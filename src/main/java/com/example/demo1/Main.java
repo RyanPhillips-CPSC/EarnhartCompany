@@ -16,6 +16,7 @@ import java.util.Scanner;
 
 public class Main extends Application {
 
+    private static boolean loggedIn = false;
     private static ArrayList<Associate> associates = new ArrayList<>();
     private static ArrayList<Customer> customers = new ArrayList<>();
     private static ArrayList<Item> items = new ArrayList<>();
@@ -156,5 +157,11 @@ public class Main extends Application {
     }
     public static ArrayList<Item> getItems() {
         return items;
+    }
+    public static void setLoggedIn(boolean loggedIn) {
+        Main.loggedIn = loggedIn;
+    }
+    public static boolean isLoggedIn() {
+        return loggedIn;
     }
 }

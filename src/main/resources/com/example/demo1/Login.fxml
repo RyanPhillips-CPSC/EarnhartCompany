@@ -42,11 +42,11 @@
       <Button layoutX="218.0" layoutY="311.0" mnemonicParsing="false" onAction="#submit" prefHeight="30.0" prefWidth="165.0" text="Sign In" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="217.0" AnchorPane.topAnchor="311.0" />
       <TextField fx:id="userIDLogin" layoutX="272.0" layoutY="200.0" />
       <TextField fx:id="passwordLogin" layoutX="272.0" layoutY="242.0" />
-      <Label layoutX="181.0" layoutY="204.0" prefHeight="18.0" prefWidth="74.0" text="UserID" textFill="WHITE" AnchorPane.bottomAnchor="178.0" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="345.0" AnchorPane.topAnchor="204.0">
+      <Label fx:id="normalLabel" layoutX="181.0" layoutY="204.0" prefHeight="18.0" prefWidth="74.0" text="UserID" AnchorPane.bottomAnchor="178.0" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="345.0" AnchorPane.topAnchor="204.0">
          <font>
             <Font name="Bodoni MT" size="14.0" />
          </font></Label>
-      <Label layoutX="181.0" layoutY="245.0" prefHeight="18.0" prefWidth="74.0" text="Password" textFill="WHITE">
+      <Label fx:id="normalLabel" layoutX="181.0" layoutY="245.0" prefHeight="18.0" prefWidth="74.0" text="Password">
          <font>
             <Font name="Bodoni MT" size="15.0" />
          </font></Label>

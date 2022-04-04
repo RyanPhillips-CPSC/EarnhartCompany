@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -29,6 +28,7 @@ import java.util.ResourceBundle;
 public class LoginController implements Initializable {
 
     private Popup helpPopup;
+    private boolean valid = false;
     private Stage stage;
     private Scene scene;
 
@@ -98,7 +98,6 @@ public class LoginController implements Initializable {
         }
     }
 
-
     /**
      * Runs when the sign-in button on the login scene is clicked.
      * If credentials are valid, the Scene will switch to the main menu
@@ -108,7 +107,6 @@ public class LoginController implements Initializable {
     @FXML
     void submit(ActionEvent event) throws IOException {
         if (helpPopup != null) { helpPopup.hide();}
-        boolean valid = false;
         int index = -1;
         String username = userIDLogin.getText();
         for (int i = 0; i < Main.getAssociates().size(); i++) { //find the associate with the matching userID
@@ -123,6 +121,7 @@ public class LoginController implements Initializable {
             }
         }
         if (valid || username.equals("CPSC220")) {
+            Main.setLoggedIn(true);
             Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root, Color.TRANSPARENT);
