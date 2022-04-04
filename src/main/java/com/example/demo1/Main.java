@@ -44,16 +44,14 @@ public class Main extends Application {
      */
     public static void main(String[] args) throws FileNotFoundException {
         itemAssignment();
-        orderIDAssignment();
+        //orderIDAssignment();
         customerAssignment();
         associateAssignment();
         launch();
-        //upon closing platform:
-        System.out.println("GUI HAS BEEN CLOSED");
     }
 
     /**
-     *
+     * Sets the orderID
      * @throws FileNotFoundException
      */
     private static void orderIDAssignment() throws FileNotFoundException {
@@ -62,18 +60,30 @@ public class Main extends Application {
     }
 
     /**
-     *
-     * @throws FileNotFoundException
+     * Collects and stores product information from a local database so the data can be easily accessed
+     * from other classes without having to connect to a database.
      */
-    public static void itemAssignment() throws FileNotFoundException {
-        Scanner scanner = new Scanner(new FileReader("Items\\ItemList.txt"));
-        while (scanner.hasNextLine()) {
-            Item i = new Item();
-            i.setName(scanner.nextLine());
-            i.setSku(scanner.nextLine());
-            i.setPrice(scanner.nextDouble());
-            scanner.nextLine();
-            items.add(i);
+    public static void itemAssignment() {
+        String name, sku, price;
+
+        String host = "jdbc:mysql://localhost:3306/clientInfo";
+        String user = "root";
+        String password = "aTundeAdjuah_22!";
+
+        try {
+            Connection connection = DriverManager.getConnection(host, user, password);//Establishing connection
+            PreparedStatement statement = connection.prepareStatement("select * from product where product.Name <> 'null'");
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                name = ("" + resultSet.getObject("Name"));
+                sku = ("" + resultSet.getObject("Sku"));
+                price = ("" + resultSet.getObject("Price"));
+                Item it = new Item(name,sku,price);
+                items.add(it);
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR CONNECTING TO DATABASE OR EXECUTING QUERY");
         }
     }
 

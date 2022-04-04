@@ -83,6 +83,7 @@ public class AssociateRecordsController implements Initializable {
         scene = new Scene (mainCallWindowFXML, 600, 400, Color.TRANSPARENT);
         scene.getStylesheets().add("style.css");
         stage.setScene(scene);
+        stage.centerOnScreen();
     }
 
     /**

@@ -15,7 +15,7 @@
    <children>
       <TextArea fx:id="textArea" editable="false" layoutX="40.0" layoutY="159.0" prefHeight="230.0" prefWidth="513.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="161.0" />
       <Separator layoutX="173.0" layoutY="199.0" prefHeight="3.2" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
-      <Button layoutX="538.0" layoutY="80.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="48.0" text="Exit" AnchorPane.bottomAnchor="619.0" AnchorPane.leftAnchor="538.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="80.0" />
+      <Button layoutX="519.0" layoutY="83.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="63.0" text="Return" AnchorPane.bottomAnchor="616.0" AnchorPane.leftAnchor="519.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="83.0" />
       <HBox>
          <children>
             <MenuBar prefHeight="26.0" prefWidth="565.0">

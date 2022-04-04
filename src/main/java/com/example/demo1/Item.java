@@ -8,14 +8,21 @@ public class Item {
     private String name;
     private String sku;
     private double price;
+    private String sPrice;
+
+    public Item(String name, String sku, Double price) {
+        this.name = name;
+        this.sku = sku;
+        this.price = price;
+    }
+
+    public Item() {}
 
     public Item(String name, String sku, String price) {
         this.name = name;
         this.sku = sku;
-        this.price = Double.parseDouble(price);
+        this.sPrice = price;
     }
-
-    public Item() {}
 
     public String getName() {
         return name;
