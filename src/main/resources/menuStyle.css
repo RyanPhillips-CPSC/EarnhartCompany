@@ -1,5 +1,5 @@
 .root {
-	-fx-background-color:  #3C3F41;
+	-fx-background-color: white;
 	-fx-border-radius: 10;
 	-fx-border-color: white;
 	-fx-background-radius: 10;
@@ -14,9 +14,7 @@
 	-fx-text-fill: white;
 }
 .menu-bar {
-	-fx-background-color: white;
-	-fx-border-radius: 10 0 0 0;
-	-fx-background-radius: 10 0 0 0;
+	-fx-background-color: #ffc1c1;
 }
 #hBox {
 	-fx-background-radius: 10 10 0 0;
@@ -40,4 +38,7 @@
 }
 #normalLabel {
 	-fx-text-fill: white;
+}
+.tool-bar {
+	-fx-background-color: #ffc1c1;
 }

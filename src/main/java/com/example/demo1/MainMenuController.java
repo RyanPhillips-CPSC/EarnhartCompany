@@ -1,15 +1,14 @@
 package com.example.demo1;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -29,9 +28,10 @@ import java.util.ResourceBundle;
 public class MainMenuController implements Initializable {
 
     private Popup helpPopup;
+    private static String currentUser = "Administrator";
 
     @FXML
-    private MenuBar exitMenu;
+    private Label mainLabel;
 
     @FXML
     private ImageView myImageView;
@@ -194,7 +194,7 @@ public class MainMenuController implements Initializable {
             VBox vBox = new VBox(label, label2);
             popup.getContent().add(vBox);
             helpPopup = popup;
-            helpPopup.show(exitMenu.getScene().getWindow());
+            helpPopup.show(myImageView.getScene().getWindow());
         }
     }
 
@@ -205,14 +205,21 @@ public class MainMenuController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        exitMenu.setOnMouseClicked(e -> Platform.exit());
-
+        mainLabel.setText("Hello " + currentUser + ", \n\nWelcome to the Farmhouse Associate Portal. \nHere, clientele, associate, " +
+                "and product information \ncan be accessed and modified.");
+        mainLabel.wrapTextProperty();
+        mainLabel.setPadding(new Insets(10));
+        mainLabel.textAlignmentProperty();
         try {
-            Image logo = new Image(String.valueOf(getClass().getResource("/Images/logo.png")));
+            Image logo = new Image(String.valueOf(getClass().getResource("/Images/ModernFurniture.jpg")));
             myImageView.setImage(logo);
             myImageView.setVisible(true);
         } catch (Exception e) {
             System.out.println("Image Not Found");
         }
+    }
+
+    public static void setCurrentUser(String currentUser) {
+        MainMenuController.currentUser = currentUser;
     }
 }

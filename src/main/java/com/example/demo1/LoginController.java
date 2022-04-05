@@ -1,6 +1,5 @@
 package com.example.demo1;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,11 +8,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -33,16 +30,13 @@ public class LoginController implements Initializable {
     private Scene scene;
 
     @FXML
-    private AnchorPane anchor;
+    private Label InvalidLabel;
 
     @FXML
-    private MenuBar exitMenu;
+    private ImageView farmImage;
 
     @FXML
     private ImageView myImageView;
-
-    @FXML
-    private Label InvalidLabel;
 
     @FXML
     private TextField passwordLogin;
@@ -94,7 +88,7 @@ public class LoginController implements Initializable {
             VBox vBox = new VBox(label, label2);
             popup.getContent().add(vBox);
             helpPopup = popup;
-            helpPopup.show(exitMenu.getScene().getWindow());
+            helpPopup.show(myImageView.getScene().getWindow());
         }
     }
 
@@ -118,17 +112,21 @@ public class LoginController implements Initializable {
         if (index != -1) { //verify the associate's password
             if (password.equals(Main.getAssociates().get(index).getPassword())) {
                 valid = true;
+                if (!(username.equals("CPSC220"))) {
+                    MainMenuController.setCurrentUser(Main.getAssociates().get(index).getName());
+                }
             }
         }
         if (valid || username.equals("CPSC220")) {
             Main.setLoggedIn(true);
             Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root, Color.TRANSPARENT);
-            scene.getStylesheets().add("style.css");
+            scene = new Scene(root, 602, 432, Color.TRANSPARENT);
+            scene.getStylesheets().add("menuStyle.css");
             stage.setScene(scene);
             stage.setTitle("Main Menu");
             stage.show();
+            stage.centerOnScreen();
         } else {
             InvalidLabel.setVisible(true);
             userIDLogin.setText("");
@@ -143,13 +141,13 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //anchor.setEffect(new DropShadow());
-        exitMenu.setOnMouseClicked(e -> Platform.exit());
-
         try {
-            Image logo = new Image(String.valueOf(getClass().getResource("/Images/logo.png")));
+            Image logo = new Image(String.valueOf(getClass().getResource("/Images/Group Project Logo.png")));
             myImageView.setImage(logo);
             myImageView.setVisible(true);
+            Image background = new Image(String.valueOf(getClass().getResource("/Images/Furniture.png")));
+            farmImage.setImage(background);
+            farmImage.setVisible(true);
         } catch (Exception e) {
             System.out.println("Image Not Found");
         }

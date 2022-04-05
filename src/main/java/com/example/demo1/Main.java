@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -29,11 +28,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400, Color.TRANSPARENT);
-        stage.setTitle("Associate Login");
+        Scene scene = new Scene(fxmlLoader.load(), 403, 548, Color.TRANSPARENT);
+        stage.setTitle("Associate Portal");
         stage.setResizable(false);
         stage.setScene(scene);
-        stage.initStyle(StageStyle.TRANSPARENT);
         scene.getStylesheets().add("style.css");
         stage.show();
     }
