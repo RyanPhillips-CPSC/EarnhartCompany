@@ -124,7 +124,7 @@ public class LoginController implements Initializable {
             scene = new Scene(root, 602, 432, Color.TRANSPARENT);
             scene.getStylesheets().add("menuStyle.css");
             stage.setScene(scene);
-            stage.setTitle("Main Menu");
+            stage.setTitle("Associate Portal");
             stage.show();
             stage.centerOnScreen();
         } else {

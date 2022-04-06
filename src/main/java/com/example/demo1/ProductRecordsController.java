@@ -45,7 +45,7 @@ public class ProductRecordsController implements Initializable {
                 "-----------------------------------------------------------\n\n");
         for (int i = 0; i < Main.getItems().size(); i++) {
             textArea.appendText(Main.getItems().get(i).getName() + "\nSku -- " +
-                    Main.getItems().get(i).getSku() + "\nPrice -- " + Main.getItems().get(i).getPrice() + "\n");
+                    Main.getItems().get(i).getSku() + "\nPrice -- " + Main.getItems().get(i).getsPrice() + "\n");
             textArea.appendText("\n----------------------------------------------------" +
                     "-----------------------------------------------\n");
         }

@@ -1,6 +1,5 @@
 package com.example.demo1;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -27,9 +25,6 @@ public class SettingsController implements Initializable {
     private Popup helpPopup;
 
     @FXML
-    private MenuBar exitMenu;
-
-    @FXML
     private ImageView myImageView;
 
     /**
@@ -44,14 +39,14 @@ public class SettingsController implements Initializable {
         if (!Main.isLoggedIn()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
             Parent mainCallWindowFXML = loader.load();
-            Stage stage = (Stage) exitMenu.getScene().getWindow();
+            Stage stage = (Stage) myImageView.getScene().getWindow();
             Scene scene = new Scene(mainCallWindowFXML, 600, 400, Color.TRANSPARENT);
             scene.getStylesheets().add("style.css");
             stage.setScene(scene);
         } else {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
             Parent mainCallWindowFXML = loader.load();
-            Stage stage = (Stage) exitMenu.getScene().getWindow();
+            Stage stage = (Stage) myImageView.getScene().getWindow();
             Scene scene = new Scene(mainCallWindowFXML, 600, 400, Color.TRANSPARENT);
             scene.getStylesheets().add("style.css");
             stage.setScene(scene);
@@ -65,8 +60,6 @@ public class SettingsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        exitMenu.setOnMouseClicked(e -> Platform.exit());
-
         try {
             Image logo = new Image(String.valueOf(getClass().getResource("/Images/logo.png")));
             myImageView.setImage(logo);
@@ -104,7 +97,7 @@ public class SettingsController implements Initializable {
             VBox vBox = new VBox(label, label2);
             popup.getContent().add(vBox);
             helpPopup = popup;
-            helpPopup.show(exitMenu.getScene().getWindow());
+            helpPopup.show(myImageView.getScene().getWindow());
         }
     }
 }

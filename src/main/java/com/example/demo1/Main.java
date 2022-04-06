@@ -150,15 +150,19 @@ public class Main extends Application {
     public static ArrayList<Associate> getAssociates() {
         return associates;
     }
+
     public static ArrayList<Customer> getCustomers() {
         return customers;
     }
+
     public static ArrayList<Item> getItems() {
         return items;
     }
+
     public static void setLoggedIn(boolean loggedIn) {
         Main.loggedIn = loggedIn;
     }
+
     public static boolean isLoggedIn() {
         return loggedIn;
     }

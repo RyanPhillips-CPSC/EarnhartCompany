@@ -1,47 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.RemoveProductController">
    <children>
-      <HBox>
-         <children>
-            <MenuBar prefHeight="26.0" prefWidth="565.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="329.0" layoutX="99.0" layoutY="25.0" stroke="WHITE" strokeType="INSIDE" width="501.0" />
+      <ImageView fx:id="myImageView" layoutX="92.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+      <BorderPane layoutX="10.0" layoutY="14.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar prefHeight="25.0" prefWidth="892.0" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#exit" text="Return" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#helpDisplay" text="About" />
-                  </items>
-                </Menu>
-              </menus>
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#helpDisplay" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
             </MenuBar>
-            <MenuBar fx:id="exitMenu" prefHeight="26.0" prefWidth="36.0" />
-         </children>
-      </HBox>
-      <Separator layoutX="173.0" layoutY="199.0" prefHeight="3.2" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
-      <ListView fx:id="itemList" layoutX="200.0" layoutY="166.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="516.0" layoutY="79.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="47.0" text="Exit" />
-      <ImageView fx:id="myImageView" fitHeight="157.0" fitWidth="417.0" layoutX="92.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+         </top>
+         <bottom>
+            <ToolBar prefHeight="47.0" prefWidth="890.0">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#associateRecords" opacity="0.95" style="-fx-border-color: white;" text="Associate Records" />
+                  <Button mnemonicParsing="false" onAction="#customerRecords" opacity="0.95" style="-fx-border-color: white;" text="Customer Records" />
+                  <Button mnemonicParsing="false" onAction="#productRecords" opacity="0.95" style="-fx-border-color: white;" text="Product Records" />
+                  <Button fx:id="homeButton" mnemonicParsing="false" onAction="#exit" text="^" />
+                  <Label text="         The Farmhouse Company" />
+               </items>
+            </ToolBar>
+         </bottom>
+         <left>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="largeButton" mnemonicParsing="false" onAction="#newAssociate" opacity="0.95" prefHeight="70.0" prefWidth="100.0" text="New Associate" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="largeButton" mnemonicParsing="false" onAction="#newCustomer" opacity="0.95" prefHeight="70.0" prefWidth="100.0" text="New Customer" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="largeButton" mnemonicParsing="false" onAction="#newProduct" opacity="0.95" prefHeight="70.0" prefWidth="100.0" text="New Product" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="largeButton" mnemonicParsing="false" onAction="#removeAssociate" opacity="0.95" prefHeight="70.0" prefWidth="100.0" text="Remove Associate" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="largeButton" mnemonicParsing="false" onAction="#removeCustomer" opacity="0.95" prefHeight="70.0" prefWidth="100.0" text="Remove Customer" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="removeProductButton" mnemonicParsing="false" onAction="#removeProduct" opacity="0.95" prefHeight="70.0" prefWidth="100.0" text="Remove Product" textAlignment="CENTER" wrapText="true" />
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <ListView fx:id="itemList" prefHeight="200.0" prefWidth="200.0" />
+                  <TextArea fx:id="skuList" prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="priceList" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>

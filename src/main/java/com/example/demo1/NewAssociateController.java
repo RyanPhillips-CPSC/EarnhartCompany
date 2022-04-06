@@ -1,6 +1,5 @@
 package com.example.demo1;
 
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,9 +8,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -37,7 +36,7 @@ public class NewAssociateController implements Initializable {
     private Scene scene;
 
     @FXML
-    private MenuBar exitMenu;
+    private Button newAssociateButton;
 
     @FXML
     private ImageView myImageView;
@@ -70,10 +69,12 @@ public class NewAssociateController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         newAssociateTitle.setItems(FXCollections.observableArrayList("Sales Associate","Cashier","Asset Protection",
                 "Freight Associate","Assistant Manager","Manager"));
-        exitMenu.setOnMouseClicked(e -> Platform.exit());
+
+        newAssociateButton.setStyle("-fx-background-color: blue");
+        newAssociateButton.setDisable(true);
 
         try {
-            Image logo = new Image(String.valueOf(getClass().getResource("/Images/logo.png")));
+            Image logo = new Image(String.valueOf(getClass().getResource("/Images/ModernFurniture2.png")));
             myImageView.setImage(logo);
             myImageView.setVisible(true);
         } catch (Exception e) {
@@ -119,6 +120,7 @@ public class NewAssociateController implements Initializable {
                 stage.setScene(scene);
                 stage.setTitle("Main Menu");
                 stage.show();
+                stage.centerOnScreen();
             } catch (SQLException s) {
                 System.out.println("ERROR -- CANNOT CONNECT TO DATABASE");
             }
@@ -145,7 +147,7 @@ public class NewAssociateController implements Initializable {
      * @param event
      */
     @FXML
-    void displayAbout(ActionEvent event) {
+    void helpDisplay(ActionEvent event) {
         if (helpPopup == null) {
             Popup popup = new Popup();
             popup.setX(100);
@@ -168,7 +170,7 @@ public class NewAssociateController implements Initializable {
             VBox vBox = new VBox(label, label2);
             popup.getContent().add(vBox);
             helpPopup = popup;
-            helpPopup.show(exitMenu.getScene().getWindow());
+            helpPopup.show(myImageView.getScene().getWindow());
         }
     }
 
@@ -184,8 +186,9 @@ public class NewAssociateController implements Initializable {
         Parent mainCallWindowFXML = loader.load();
         stage = (Stage) myImageView.getScene().getWindow();
         scene = new Scene (mainCallWindowFXML, 600, 400, Color.TRANSPARENT);
-        scene.getStylesheets().add("style.css");
+        scene.getStylesheets().add("menuStyle.css");
         stage.setScene(scene);
+        stage.centerOnScreen();
     }
 
     /**
@@ -202,6 +205,114 @@ public class NewAssociateController implements Initializable {
         Scene mainCallWindow = new Scene (mainCallWindowFXML, 600, 400, Color.TRANSPARENT);
         mainCallWindow.getStylesheets().add("style.css");
         thisStage.setScene(mainCallWindow);
+        stage.centerOnScreen();
+    }
+    @FXML
+    void newAssociate(ActionEvent event) throws IOException {
+        if (helpPopup != null) { helpPopup.hide();}
+        Parent root = FXMLLoader.load(getClass().getResource("NewAssociateInfo.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,575, Color.TRANSPARENT);
+        scene.getStylesheets().add("menuStyle.css");
+        stage.setScene(scene);
+        stage.setTitle("Associate Portal");
+        stage.show();
+        stage.centerOnScreen();
+    }
+    @FXML
+    void newCustomer(ActionEvent event) throws IOException {
+        if (helpPopup != null) { helpPopup.hide();}
+        Parent root = FXMLLoader.load(getClass().getResource("NewCustomerInfo.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 602,432, Color.TRANSPARENT);
+        scene.getStylesheets().add("customer.css");
+        stage.setScene(scene);
+        stage.setTitle("Associate Portal");
+        stage.show();
+        stage.centerOnScreen();
+    }
+    @FXML
+    void newProduct(ActionEvent event) throws IOException {
+        if (helpPopup != null) { helpPopup.hide();}
+        Parent root = FXMLLoader.load(getClass().getResource("NewProduct.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,400, Color.TRANSPARENT);
+        scene.getStylesheets().add("product.css");
+        stage.setScene(scene);
+        stage.setTitle("New Product Form");
+        stage.show();
+        stage.centerOnScreen();
+    }
+    @FXML
+    void customerRecords(ActionEvent event) throws IOException {
+        if (helpPopup != null) { helpPopup.hide();}
+        Parent root = FXMLLoader.load(getClass().getResource("CustomerRecords.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,725, Color.TRANSPARENT);
+        scene.getStylesheets().add("style.css");
+        stage.setScene(scene);
+        stage.setTitle("Customer Form");
+        stage.setY(30);
+        stage.show();
+    }
+    @FXML
+    void productRecords(ActionEvent event) throws IOException {
+        if (helpPopup != null) { helpPopup.hide();}
+        Parent root = FXMLLoader.load(getClass().getResource("ProductRecords.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,725, Color.TRANSPARENT);
+        scene.getStylesheets().add("style.css");
+        stage.setScene(scene);
+        stage.setTitle("Product Form");
+        stage.setY(30);
+        stage.show();
+    }
+    @FXML
+    void associateRecords(ActionEvent event) throws IOException {
+        if (helpPopup != null) { helpPopup.hide();}
+        Parent root = FXMLLoader.load(getClass().getResource("AssociateRecords.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,725, Color.TRANSPARENT);
+        scene.getStylesheets().add("style.css");
+        stage.setScene(scene);
+        stage.setTitle("Associate Data");
+        stage.setY(30);
+        stage.show();
+    }
+    @FXML
+    void removeAssociate(ActionEvent event) throws IOException {
+        if (helpPopup != null) { helpPopup.hide();}
+        Parent root = FXMLLoader.load(getClass().getResource("RemoveAssociate.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,400, Color.TRANSPARENT);
+        scene.getStylesheets().add("removeAssociate.css");
+        stage.setScene(scene);
+        stage.setTitle("Associate Portal");
+        stage.show();
+        stage.centerOnScreen();
+    }
+    @FXML
+    void removeCustomer(ActionEvent event) throws IOException {
+        if (helpPopup != null) { helpPopup.hide();}
+        Parent root = FXMLLoader.load(getClass().getResource("RemoveCustomer.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,400, Color.TRANSPARENT);
+        scene.getStylesheets().add("removeAssociate.css");
+        stage.setScene(scene);
+        stage.setTitle("Associate Portal");
+        stage.show();
+        stage.centerOnScreen();
+    }
+    @FXML
+    void removeProduct(ActionEvent event) throws IOException {
+        if (helpPopup != null) { helpPopup.hide();}
+        Parent root = FXMLLoader.load(getClass().getResource("RemoveProduct.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 600,400, Color.TRANSPARENT);
+        scene.getStylesheets().add("style.css");
+        stage.setScene(scene);
+        stage.setTitle("Product Removal Form");
+        stage.show();
     }
 }
 

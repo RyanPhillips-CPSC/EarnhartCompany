@@ -8,6 +8,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -31,6 +32,9 @@ public class MainMenuController implements Initializable {
     private static String currentUser = "Administrator";
 
     @FXML
+    private Button homeButton;
+
+    @FXML
     private Label mainLabel;
 
     @FXML
@@ -45,10 +49,11 @@ public class MainMenuController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("NewAssociateInfo.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 600,575, Color.TRANSPARENT);
-        scene.getStylesheets().add("style.css");
+        scene.getStylesheets().add("associate.css");
         stage.setScene(scene);
-        stage.setTitle("Associate Form");
+        stage.setTitle("Associate Portal");
         stage.show();
+        stage.centerOnScreen();
     }
 
     @FXML
@@ -56,11 +61,12 @@ public class MainMenuController implements Initializable {
         if (helpPopup != null) { helpPopup.hide();}
         Parent root = FXMLLoader.load(getClass().getResource("NewCustomerInfo.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 600,400, Color.TRANSPARENT);
-        scene.getStylesheets().add("style.css");
+        scene = new Scene(root, 602,432, Color.TRANSPARENT);
+        scene.getStylesheets().add("customer.css");
         stage.setScene(scene);
-        stage.setTitle("New Customer Form");
+        stage.setTitle("Associate Portal");
         stage.show();
+        stage.centerOnScreen();
     }
 
     @FXML
@@ -69,10 +75,11 @@ public class MainMenuController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("NewProduct.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 600,400, Color.TRANSPARENT);
-        scene.getStylesheets().add("style.css");
+        scene.getStylesheets().add("product.css");
         stage.setScene(scene);
-        stage.setTitle("New Product Form");
+        stage.setTitle("Associate Portal");
         stage.show();
+        stage.centerOnScreen();
     }
 
     @FXML
@@ -120,10 +127,11 @@ public class MainMenuController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("RemoveAssociate.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 600,400, Color.TRANSPARENT);
-        scene.getStylesheets().add("style.css");
+        scene.getStylesheets().add("removeAssociate.css");
         stage.setScene(scene);
-        stage.setTitle("Associate Removal Form");
+        stage.setTitle("Associate Portal");
         stage.show();
+        stage.centerOnScreen();
     }
 
     @FXML
@@ -132,10 +140,11 @@ public class MainMenuController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("RemoveCustomer.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 600,400, Color.TRANSPARENT);
-        scene.getStylesheets().add("style.css");
+        scene.getStylesheets().add("removeAssociate.css");
         stage.setScene(scene);
-        stage.setTitle("Customer Removal Form");
+        stage.setTitle("Associate Portal");
         stage.show();
+        stage.centerOnScreen();
     }
 
     @FXML
@@ -144,10 +153,11 @@ public class MainMenuController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("RemoveProduct.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, 600,400, Color.TRANSPARENT);
-        scene.getStylesheets().add("style.css");
+        scene.getStylesheets().add("removeAssociate.css");
         stage.setScene(scene);
-        stage.setTitle("Product Removal Form");
+        stage.setTitle("Associate Portal");
         stage.show();
+        stage.centerOnScreen();
     }
 
     /**
@@ -205,6 +215,9 @@ public class MainMenuController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        homeButton.setStyle("-fx-background-color: blue");
+        homeButton.setDisable(true);
+
         mainLabel.setText("Hello " + currentUser + ", \n\nWelcome to the Farmhouse Associate Portal. \nHere, clientele, associate, " +
                 "and product information \ncan be accessed and modified.");
         mainLabel.wrapTextProperty();

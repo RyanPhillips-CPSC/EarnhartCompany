@@ -95,7 +95,7 @@ public class CustomerRecordsController implements Initializable {
                 for (int k = 0; k < Main.getCustomers().get(i).getCustomerOrders().get(j).getOrderItems().size(); k++) {
                    textArea.appendText(Main.getCustomers().get(i).getCustomerOrders().get(j).getOrderItems().get(k).getName()
                            + "\nSku: " + Main.getCustomers().get(i).getCustomerOrders().get(j).getOrderItems().get(k).getSku() + "\nCost: " +
-                           Main.getCustomers().get(i).getCustomerOrders().get(j).getOrderItems().get(k).getPrice() + "\n");
+                           Main.getCustomers().get(i).getCustomerOrders().get(j).getOrderItems().get(k).getsPrice() + "\n");
                     textArea.appendText("-------\n");
                 }
             }

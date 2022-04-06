@@ -9,11 +9,15 @@
 	-fx-font-family: "Bodoni MT";
 }
 .button {
+	-fx-opacity: .9;
+	-fx-border-radius: 10;
+	-fx-background-radius: 10;
 	-fx-background-color: #F5696C;
 	-fx-font-weight: bold;
 	-fx-text-fill: white;
 }
 .menu-bar {
+	-fx-opacity: .95;
 	-fx-background-color: #ffc1c1;
 }
 #hBox {
@@ -40,5 +44,6 @@
 	-fx-text-fill: white;
 }
 .tool-bar {
+	-fx-opacity: .8;
 	-fx-background-color: #ffc1c1;
 }
