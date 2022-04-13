@@ -27,23 +27,11 @@ public class Associate extends Person {
         return userID;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
-
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public AssociateTitle getAssociateTitle() {
         return associateTitle;
-    }
-
-    public void setAssociateTitle(AssociateTitle associateTitle) {
-        this.associateTitle = associateTitle;
     }
 }

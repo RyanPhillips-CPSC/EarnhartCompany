@@ -27,19 +27,7 @@ public class Item {
         return sku;
     }
 
-    public void setSku(String sku) {
-        this.sku = sku;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public String getsPrice() {
         return sPrice;
-    }
-
-    public void setsPrice(String sPrice) {
-        this.sPrice = sPrice;
     }
 }
