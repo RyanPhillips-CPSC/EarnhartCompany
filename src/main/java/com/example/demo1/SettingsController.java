@@ -6,23 +6,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.TextAlignment;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SettingsController implements Initializable {
-
-    private Popup helpPopup;
+public class SettingsController extends Controller implements Initializable {
 
     @FXML
     private ImageView myImageView;
@@ -34,7 +27,6 @@ public class SettingsController implements Initializable {
      */
     @FXML
     void returnToMain(ActionEvent event) throws IOException {
-        if (helpPopup != null) { helpPopup.hide();}
 
         if (!Main.isLoggedIn()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
@@ -75,29 +67,6 @@ public class SettingsController implements Initializable {
      */
     @FXML
     void helpDisplay(ActionEvent event) throws IOException {
-        if (helpPopup == null) {
-            Popup popup = new Popup();
-            popup.setX(100);
-            popup.setY(200);
-            Label label = new Label("The Farmhouse Company Data Manager software\n" +
-                    "provides ease of access to sensitive clientele and\n " +
-                    "employee information. It allows for effortless\n" +
-                    "storage and modification of company records.\n\n" +
-                    "Please speak to management regarding any questions\nor contact our developer team:\n\n");
-            label.setTextAlignment(TextAlignment.CENTER);
-            label.setTextFill(Paint.valueOf("white"));
-            label.setStyle("-fx-label-padding: 10 10 10 10");
-            Label label2 = new Label("        rphillip@mail.umw.edu\n" +
-                    "        jhewitt2@mail.umw.edu\n" +
-                    "        jvogtli@mail.umw.edu");
-            label2.setTextAlignment(TextAlignment.CENTER);
-            label2.setTextFill(Paint.valueOf("blue"));
-            label2.setStyle("-fx-label-padding: 30 0 20 60");
-
-            VBox vBox = new VBox(label, label2);
-            popup.getContent().add(vBox);
-            helpPopup = popup;
-            helpPopup.show(myImageView.getScene().getWindow());
-        }
+        super.helpDisplay(myImageView);
     }
 }

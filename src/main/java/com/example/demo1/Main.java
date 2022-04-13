@@ -7,11 +7,9 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main extends Application {
 
@@ -43,19 +41,9 @@ public class Main extends Application {
      */
     public static void main(String[] args) throws FileNotFoundException {
         itemAssignment();
-        //orderIDAssignment();
         customerAssignment();
         associateAssignment();
         launch();
-    }
-
-    /**
-     * Sets the orderID
-     * @throws FileNotFoundException
-     */
-    private static void orderIDAssignment() throws FileNotFoundException {
-        Scanner scanner = new Scanner(new FileReader("OrderID\\OrderID.txt"));
-        Order.setOrderID(scanner.nextInt());
     }
 
     /**
