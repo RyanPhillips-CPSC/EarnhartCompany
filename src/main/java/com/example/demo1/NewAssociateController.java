@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -107,13 +106,12 @@ public class NewAssociateController extends Controller implements Initializable 
                 PreparedStatement preparedStatement = connection.prepareStatement("insert into associate values ('" + name + "','" + phone + "','" + email + "','" + address + "','" + userID + "','" + password + "','" + associateTitle + "')");
                 preparedStatement.executeUpdate();
 
-                Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                scene = new Scene(root, Color.TRANSPARENT);
-                scene.getStylesheets().add("style.css");
+                FXMLLoader loader = new FXMLLoader(Controller.class.getResource("MainMenu.fxml"));
+                Parent mainCallWindowFXML = loader.load();
+                stage = (Stage) myImageView.getScene().getWindow();
+                scene = new Scene(mainCallWindowFXML, 600, 400, Color.TRANSPARENT);
+                scene.getStylesheets().add("menuStyle.css");
                 stage.setScene(scene);
-                stage.setTitle("Main Menu");
-                stage.show();
                 stage.centerOnScreen();
             } catch (SQLException s) {
                 System.out.println("ERROR -- CANNOT CONNECT TO DATABASE");

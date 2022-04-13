@@ -1,11 +1,9 @@
 package com.example.demo1;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.MenuBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -21,7 +19,7 @@ public class ProductRecordsController extends Controller implements Initializabl
     private Scene scene;
 
     @FXML
-    private MenuBar exitMenu;
+    ImageView backgroundImageView;
 
     @FXML
     private ImageView myImageView;
@@ -32,6 +30,16 @@ public class ProductRecordsController extends Controller implements Initializabl
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image logo = new Image(String.valueOf(getClass().getResource("/Images/Group Project Logo.png")));
+        myImageView.setImage(logo);
+        myImageView.setVisible(true);
+
+        textArea.setOpacity(.90);
+
+        Image background = new Image(String.valueOf(getClass().getResource("/Images/ModernFurniture4.png")));
+        backgroundImageView.setImage(background);
+        backgroundImageView.setVisible(true);
+
         textArea.appendText("Product Records --------------------" +
                 "-----------------------------------------------------------\n\n");
         for (int i = 0; i < Main.getItems().size(); i++) {
@@ -39,16 +47,6 @@ public class ProductRecordsController extends Controller implements Initializabl
                     Main.getItems().get(i).getSku() + "\nPrice -- " + Main.getItems().get(i).getsPrice() + "\n");
             textArea.appendText("\n----------------------------------------------------" +
                     "-----------------------------------------------\n");
-        }
-
-        exitMenu.setOnMouseClicked(e -> Platform.exit());
-
-        try {
-            Image logo = new Image(String.valueOf(getClass().getResource("/Images/logo.png")));
-            myImageView.setImage(logo);
-            myImageView.setVisible(true);
-        } catch (Exception e) {
-            System.out.println("Image Not Found");
         }
     }
 

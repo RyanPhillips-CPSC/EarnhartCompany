@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+//TODO == STRIP THE WHITESPACE ON NEW DATA BEFORE ADDING IT TO THE DATABASE
 public abstract class Controller {
 
     private static Popup helpPopup;
@@ -23,15 +24,15 @@ public abstract class Controller {
     private static Scene scene;
 
     public void exit(ImageView myImageView) throws IOException {
-            if (helpPopup != null) { helpPopup.hide(); }
-            FXMLLoader loader = new FXMLLoader(Controller.class.getResource("MainMenu.fxml"));
-            Parent mainCallWindowFXML = loader.load();
-            stage = (Stage) myImageView.getScene().getWindow();
-            scene = new Scene(mainCallWindowFXML, 600, 400, Color.TRANSPARENT);
-            scene.getStylesheets().add("menuStyle.css");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-        }
+        if (helpPopup != null) { helpPopup.hide();}
+        FXMLLoader loader = new FXMLLoader(Controller.class.getResource("MainMenu.fxml"));
+        Parent mainCallWindowFXML = loader.load();
+        stage = (Stage) myImageView.getScene().getWindow();
+        scene = new Scene(mainCallWindowFXML, 600, 400, Color.TRANSPARENT);
+        scene.getStylesheets().add("menuStyle.css");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+    }
 
     void settings(ImageView myImageView) throws IOException {
         if (helpPopup != null) { helpPopup.hide();}
@@ -122,12 +123,13 @@ public abstract class Controller {
         if (helpPopup != null) { helpPopup.hide();}
         Parent root = FXMLLoader.load(getClass().getResource("ProductRecords.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 600,725, Color.TRANSPARENT);
-        scene.getStylesheets().add("style.css");
+        scene = new Scene(root, 700,450, Color.TRANSPARENT);
+        scene.getStylesheets().add("records.css");
         stage.setScene(scene);
-        stage.setTitle("Product Form");
+        stage.setTitle("Associate Portal");
         stage.setY(30);
         stage.show();
+        stage.centerOnScreen();
     }
 
     void associateRecords(ActionEvent event) throws IOException {

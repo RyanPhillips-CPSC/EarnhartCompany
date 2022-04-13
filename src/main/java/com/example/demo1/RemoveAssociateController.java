@@ -97,7 +97,7 @@ public class RemoveAssociateController extends Controller implements Initializab
             }
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root, 600,400, Color.TRANSPARENT);
-            scene.getStylesheets().add("style.css");
+            scene.getStylesheets().add("menuStyle.css");
             stage.setScene(scene);
             stage.setTitle("Main Menu");
             stage.show();

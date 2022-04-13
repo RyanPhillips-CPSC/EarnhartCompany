@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -81,17 +80,16 @@ public class RemoveProductController extends Controller implements Initializable
 
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+                FXMLLoader loader = new FXMLLoader(Controller.class.getResource("MainMenu.fxml"));
+                Parent mainCallWindowFXML = loader.load();
+                stage = (Stage) myImageView.getScene().getWindow();
+                scene = new Scene(mainCallWindowFXML, 600, 400, Color.TRANSPARENT);
+                scene.getStylesheets().add("menuStyle.css");
+                stage.setScene(scene);
+                stage.centerOnScreen();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root, 600,400, Color.TRANSPARENT);
-            scene.getStylesheets().add("mainStyle.css");
-            stage.setScene(scene);
-            stage.setTitle("Main Menu");
-            stage.show();
-            stage.centerOnScreen();
         });
     }
 
