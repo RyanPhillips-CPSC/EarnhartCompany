@@ -106,11 +106,6 @@ public class RemoveCustomerController extends Controller implements Initializabl
     }
 
     @FXML
-    void settings(ActionEvent event) throws IOException {
-        super.settings(myImageView);
-    }
-
-    @FXML
     void helpDisplay(ActionEvent event) throws IOException {
         super.helpDisplay(myImageView);
     }

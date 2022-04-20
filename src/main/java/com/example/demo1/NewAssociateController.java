@@ -119,16 +119,6 @@ public class NewAssociateController extends Controller implements Initializable 
         }
     }
 
-    /**
-     * Switches to program settings
-     * @param event
-     * @throws IOException
-     */
-    @FXML
-    void settings(ActionEvent event) throws IOException {
-        super.settings(myImageView);
-    }
-
     @FXML
     void helpDisplay(ActionEvent event) throws IOException {
         super.helpDisplay(myImageView);

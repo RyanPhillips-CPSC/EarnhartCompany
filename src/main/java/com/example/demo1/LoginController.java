@@ -40,11 +40,6 @@ public class LoginController extends Controller implements Initializable {
     private TextField userIDLogin;
 
     @FXML
-    void settings(ActionEvent event) throws IOException {
-        super.settings(myImageView);
-    }
-
-    @FXML
     void helpDisplay(ActionEvent event) throws IOException {
         super.helpDisplay(myImageView);
     }
@@ -68,12 +63,12 @@ public class LoginController extends Controller implements Initializable {
         if (index != -1) { //verify the associate's password
             if (password.equals(Main.getAssociates().get(index).getPassword())) {
                 valid = true;
-                if (!(username.equals("CPSC220"))) {
+                if (!(username.equals("CPSC240"))) {
                     MainMenuController.setCurrentUser(Main.getAssociates().get(index).getName());
                 }
             }
         }
-        if (valid || username.equals("CPSC220")) {
+        if (valid || username.equals("CPSC240")) {
             Main.setLoggedIn(true);
             Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.RemoveProductController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.RemoveProductController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="329.0" layoutX="99.0" layoutY="25.0" stroke="WHITE" strokeType="INSIDE" width="501.0" />
       <ImageView fx:id="myImageView" layoutX="92.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
@@ -25,8 +24,6 @@
                <menus>
                   <Menu mnemonicParsing="false" text="File">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#exit" text="Return" />
                      </items>
                   </Menu>
@@ -50,7 +47,7 @@
                   <Button mnemonicParsing="false" onAction="#customerRecords" opacity="0.95" style="-fx-border-color: white;" text="Customer Records" />
                   <Button mnemonicParsing="false" onAction="#productRecords" opacity="0.95" style="-fx-border-color: white;" text="Product Records" />
                   <Button fx:id="homeButton" mnemonicParsing="false" onAction="#exit" text="^" />
-                  <Label text="         The Farmhouse Company" />
+                  <Label text="                                                                  The Farmhouse Company" />
                </items>
             </ToolBar>
          </bottom>
@@ -69,7 +66,7 @@
          <center>
             <HBox BorderPane.alignment="CENTER">
                <children>
-                  <ListView fx:id="itemList" prefHeight="327.0" prefWidth="500.0" />
+                  <ListView fx:id="itemList" prefHeight="327.0" prefWidth="700.0" />
                </children>
             </HBox>
          </center>

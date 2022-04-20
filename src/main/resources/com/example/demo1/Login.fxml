@@ -28,11 +28,7 @@
          <top>
             <MenuBar opacity="0.9" prefHeight="30.0" prefWidth="718.0">
               <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings" />
-                  </items>
-                </Menu>
+                <Menu mnemonicParsing="false" text="File" />
                 <Menu mnemonicParsing="false" text="Edit">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Delete" />

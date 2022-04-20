@@ -4,23 +4,24 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ProductRecordsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ProductRecordsController">
    <children>
-      <ImageView fx:id="backgroundImageView" fitHeight="498.0" fitWidth="998.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
-      <TextArea fx:id="textArea" editable="false" layoutX="50.0" layoutY="158.0" prefHeight="230.0" prefWidth="513.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="158.0" />
       <ImageView fx:id="myImageView" fitHeight="96.0" fitWidth="357.0" layoutX="172.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="172.0" AnchorPane.rightAnchor="171.0" AnchorPane.topAnchor="38.0" />
-      <Button layoutX="632.0" layoutY="73.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
-      <MenuBar prefHeight="26.0" prefWidth="700.0" AnchorPane.bottomAnchor="424.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fx:id="backgroundImageView" fitHeight="498.0" fitWidth="998.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
+      <TextArea fx:id="textArea" editable="false" layoutX="50.0" layoutY="40.0" prefHeight="396.0" prefWidth="600.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="40.0" />
+      <Button layoutX="758.0" layoutY="40.0" mnemonicParsing="false" onAction="#exit" prefHeight="0.0" prefWidth="33.0" text="^" AnchorPane.leftAnchor="758.0" AnchorPane.rightAnchor="9.0">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <MenuBar prefHeight="26.0" prefWidth="800.0" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#exit" text="Return" />
             </items>
           </Menu>

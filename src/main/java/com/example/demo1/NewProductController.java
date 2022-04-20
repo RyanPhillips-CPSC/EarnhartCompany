@@ -101,11 +101,6 @@ public class NewProductController extends Controller implements Initializable {
     }
 
     @FXML
-    void settings(ActionEvent event) throws IOException {
-        super.settings(myImageView);
-    }
-
-    @FXML
     void helpDisplay(ActionEvent event) throws IOException {
         super.helpDisplay(myImageView);
     }

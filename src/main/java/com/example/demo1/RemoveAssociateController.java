@@ -105,11 +105,6 @@ public class RemoveAssociateController extends Controller implements Initializab
     }
 
     @FXML
-    void settings(ActionEvent event) throws IOException {
-        super.settings(myImageView);
-    }
-
-    @FXML
     void helpDisplay(ActionEvent event) throws IOException {
         super.helpDisplay(myImageView);
     }

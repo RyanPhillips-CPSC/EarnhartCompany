@@ -34,16 +34,6 @@ public abstract class Controller {
         stage.centerOnScreen();
     }
 
-    void settings(ImageView myImageView) throws IOException {
-        if (helpPopup != null) { helpPopup.hide();}
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Settings.fxml"));
-        Parent mainCallWindowFXML = loader.load();
-        Stage thisStage = (Stage) myImageView.getScene().getWindow();
-        Scene mainCallWindow = new Scene (mainCallWindowFXML, 600, 400, Color.TRANSPARENT);
-        mainCallWindow.getStylesheets().add("style.css");
-        thisStage.setScene(mainCallWindow);
-    }
-
     void helpDisplay(ImageView myImageView) throws IOException {
         if (helpPopup == null) {
             Popup popup = new Popup();
@@ -111,19 +101,20 @@ public abstract class Controller {
         if (helpPopup != null) { helpPopup.hide();}
         Parent root = FXMLLoader.load(getClass().getResource("CustomerRecords.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 600,725, Color.TRANSPARENT);
-        scene.getStylesheets().add("style.css");
+        scene = new Scene(root, 800,560, Color.TRANSPARENT);
+        scene.getStylesheets().add("records.css");
         stage.setScene(scene);
         stage.setTitle("Customer Form");
         stage.setY(30);
         stage.show();
+        stage.centerOnScreen();
     }
 
     void productRecords(ActionEvent event) throws IOException {
         if (helpPopup != null) { helpPopup.hide();}
         Parent root = FXMLLoader.load(getClass().getResource("ProductRecords.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 700,450, Color.TRANSPARENT);
+        scene = new Scene(root, 800,560, Color.TRANSPARENT);
         scene.getStylesheets().add("records.css");
         stage.setScene(scene);
         stage.setTitle("Associate Portal");
@@ -136,12 +127,13 @@ public abstract class Controller {
         if (helpPopup != null) { helpPopup.hide();}
         Parent root = FXMLLoader.load(getClass().getResource("AssociateRecords.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 600,725, Color.TRANSPARENT);
-        scene.getStylesheets().add("style.css");
+        scene = new Scene(root, 800,560, Color.TRANSPARENT);
+        scene.getStylesheets().add("records.css");
         stage.setScene(scene);
         stage.setTitle("Associate Data");
         stage.setY(30);
         stage.show();
+        stage.centerOnScreen();
     }
 
     void removeAssociate(ActionEvent event) throws IOException {
@@ -172,7 +164,7 @@ public abstract class Controller {
         if (helpPopup != null) { helpPopup.hide();}
         Parent root = FXMLLoader.load(getClass().getResource("RemoveProduct.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 600,400, Color.TRANSPARENT);
+        scene = new Scene(root, 800,400, Color.TRANSPARENT);
         scene.getStylesheets().add("removeAssociate.css");
         stage.setScene(scene);
         stage.setTitle("Associate Portal");

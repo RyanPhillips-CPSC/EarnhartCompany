@@ -4,23 +4,15 @@ public class Associate extends Person {
 
     private String userID;
     private String password;
-    private String associateTitleString;
-    private AssociateTitle associateTitle;
+    private String associateTitle;
 
     public Associate(){}
-
-    public Associate(String name, String phone, String email, String address, String userID, String password, AssociateTitle associateTitle) {
-        super(name, phone, email, address);
-        this.userID = userID;
-        this.password = password;
-        this.associateTitle = associateTitle;
-    }
 
     public Associate(String name, String phone, String email, String address, String userID, String password, String associateTitle) {
         super(name, phone, email, address);
         this.userID = userID;
         this.password = password;
-        this.associateTitleString = associateTitle;
+        this.associateTitle = associateTitle;
     }
 
     public String getUserID() {
@@ -31,7 +23,7 @@ public class Associate extends Person {
         return password;
     }
 
-    public AssociateTitle getAssociateTitle() {
+    public String getAssociateTitle() {
         return associateTitle;
     }
 }
