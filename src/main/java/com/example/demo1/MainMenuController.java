@@ -3,13 +3,15 @@ package com.example.demo1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
+import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,100 +19,116 @@ import java.util.ResourceBundle;
 
 public class MainMenuController extends Controller implements Initializable {
 
-    private static String currentUser = "Administrator";
+    @FXML
+    private Label versionLabel;
+
+    @FXML
+    private VBox leftColumn;
+
+    @FXML
+    private Pane rightPane;
+
+    @FXML
+    private ToolBar toolBar;
+
+    @FXML
+    private ImageView logoImage;
+
+    @FXML
+    private Label optionLabel;
+
+    @FXML
+    private BorderPane border;
+
+    @FXML
+    private Pane centerPane;
+
+    @FXML
+    private VBox centerVBox;
+
+    @FXML
+    private VBox clientHBox;
+
+    @FXML
+    private Button helpButton;
 
     @FXML
     private Button homeButton;
 
     @FXML
-    private Label mainLabel;
+    private ImageView imageButton1;
 
     @FXML
-    private ImageView myImageView;
+    private ImageView imageButton2;
 
-    private Stage stage;
-    private Scene scene;
+    @FXML
+    private ImageView imageButton3;
 
-    /**
-     * Sets ImageView and creates close button
-     * @param url
-     * @param resourceBundle
-     */
+    @FXML
+    private Label mainLogo;
+
+    @FXML
+    private HBox menuHBox;
+
+    @FXML
+    private ImageView mouthpieceIcon;
+
+    @FXML
+    private Label nameLabel;
+
+    @FXML
+    private Label nameLabel2;
+
+    @FXML
+    private VBox ordersHBox;
+
+    @FXML
+    private HBox otherHBox;
+
+    @FXML
+    private VBox productHBox;
+
+    @FXML
+    private Button settingsButton;
+
+    @FXML
+    private Label topRightLabel;
+
+    @FXML
+    void entered(MouseEvent event) {
+        ImageView imageView = (ImageView) event.getSource();
+        imageView.setStyle("-fx-opacity: .5");
+    }
+
+    @FXML
+    void exited(MouseEvent event) {
+        ImageView imageView = (ImageView) event.getSource();
+        imageView.setStyle("-fx-opacity: 1");
+    }
+
+    @FXML
+    void helpScene(ActionEvent event) throws IOException {
+        super.helpScene(mouthpieceIcon);
+    }
+
+    @FXML
+    void aboutScene(ActionEvent event) throws IOException {
+        super.aboutScene(mouthpieceIcon);
+    }
+
+    @FXML
+    void newClient(MouseEvent event) {
+
+    }
+
+    @FXML
+    void returnHome(ActionEvent event) throws IOException {
+        super.returnHome(event);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        homeButton.setStyle("-fx-background-color: blue");
         homeButton.setDisable(true);
-
-        mainLabel.setText("Hello " + currentUser + ", \n\nWelcome to the Farmhouse Associate Portal. \nHere, clientele, associate, " +
-                "and product information \ncan be accessed and modified.");
-        mainLabel.wrapTextProperty();
-        mainLabel.setPadding(new Insets(10));
-        mainLabel.textAlignmentProperty();
-        try {
-            Image logo = new Image(String.valueOf(getClass().getResource("/Images/ModernFurniture.jpg")));
-            myImageView.setImage(logo);
-            myImageView.setVisible(true);
-        } catch (Exception e) {
-            System.out.println("Image Not Found");
-        }
-    }
-
-    public static void setCurrentUser(String currentUser) {
-        MainMenuController.currentUser = currentUser;
-    }
-
-    @FXML
-    void helpDisplay(ActionEvent event) throws IOException {
-        super.helpDisplay(myImageView);
-    }
-
-    @FXML
-    void exit (ActionEvent event) throws IOException {
-        super.exit(myImageView);
-    }
-
-    @FXML
-    void newAssociate(ActionEvent event) throws IOException {
-        super.newAssociate(event);
-    }
-
-    @FXML
-    void newCustomer(ActionEvent event) throws IOException {
-        super.newCustomer(event);
-    }
-
-    @FXML
-    void newProduct(ActionEvent event) throws IOException {
-        super.newProduct(event);
-    }
-
-    @FXML
-    void customerRecords(ActionEvent event) throws IOException {
-        super.customerRecords(event);
-    }
-
-    @FXML
-    void productRecords(ActionEvent event) throws IOException {
-        super.productRecords(event);
-    }
-
-    @FXML
-    void associateRecords(ActionEvent event) throws IOException {
-        super.associateRecords(event);
-    }
-
-    @FXML
-    void removeAssociate(ActionEvent event) throws IOException {
-        super.removeAssociate(event);
-    }
-
-    @FXML
-    void removeCustomer(ActionEvent event) throws IOException {
-        super.removeCustomer(event);
-    }
-
-    @FXML
-    void removeProduct(ActionEvent event) throws IOException {
-        super.removeProduct(event);
+        homeButton.setStyle("-fx-background-color: blue");
     }
 }

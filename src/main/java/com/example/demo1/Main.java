@@ -3,6 +3,7 @@ package com.example.demo1;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -10,13 +11,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Main extends Application {
 
-    private static boolean loggedIn = false;
-    private static ArrayList<Associate> associates = new ArrayList<>();
-    private static ArrayList<Customer> customers = new ArrayList<>();
-    private static ArrayList<Item> items = new ArrayList<>();
+    private static ArrayList<Admin> admins = new ArrayList();
 
     /**
      * Sets important Stage properties and loads the initial Scene
@@ -26,132 +25,52 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 403, 548, Color.TRANSPARENT);
-        stage.setTitle("Associate Portal");
+        Scene scene = new Scene(fxmlLoader.load(), 364, 549, Color.TRANSPARENT);
+        stage.setTitle("The Earnhart Company");
         stage.setResizable(false);
         stage.setScene(scene);
-        scene.getStylesheets().add("style.css");
+        scene.getStylesheets().add("loginStyle.css");
+        stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/Images/windowIcon.png"))));
         stage.show();
     }
 
     /**
-     * Calls data assignment methods and runs the GUI
+     * Runs the GUI
      * @param args
      * @throws FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException {
-        itemAssignment();
-        customerAssignment();
         associateAssignment();
         launch();
     }
 
     /**
-     * Collects and stores product information from a local database so the data can be easily accessed
-     * from other classes without having to connect to a database.
-     */
-    public static void itemAssignment() {
-        String name, sku, price;
-
-        String host = "jdbc:mysql://localhost:3306/clientInfo";
-        String user = "root";
-        String password = "aTundeAdjuah_22!";
-
-        try {
-            Connection connection = DriverManager.getConnection(host, user, password);//Establishing connection
-            PreparedStatement statement = connection.prepareStatement("select * from product where product.Name <> 'null'");
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                name = ("" + resultSet.getObject("Name"));
-                sku = ("" + resultSet.getObject("Sku"));
-                price = ("" + resultSet.getObject("Price"));
-                Item it = new Item(name,sku,price);
-                items.add(it);
-            }
-        } catch (SQLException e) {
-            System.out.println("ERROR CONNECTING TO DATABASE OR EXECUTING QUERY");
-        }
-    }
-
-    /**
-     * Collects and stores associate information from a local database so the data can be easily accessed
-     * from other classes without having to connect to a database.
+     * Adds administrator login info to an ArrayList for easy access
      */
     public static void associateAssignment() {
-        String name, phone, email, address, userID, password, associateTitle;
+        String userID, password;
 
-        String host = "jdbc:mysql://localhost:3306/clientInfo";
+        String host = "jdbc:mysql://localhost:3306/theearnhartcompany";
         String user = "root";
         String sqlPassword = "aTundeAdjuah_22!";
 
         try {
-            Connection connection = DriverManager.getConnection(host, user, sqlPassword);//Establishing connection
-            PreparedStatement statement = connection.prepareStatement("select * from associate where associate.Name <> 'null'");
+            Connection connection = DriverManager.getConnection(host, user, sqlPassword);
+            PreparedStatement statement = connection.prepareStatement("select * from login where login.UserID <> 'null'");
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                name = ("" + resultSet.getObject("Name"));
-                phone = ("" + resultSet.getObject("Phone"));
-                email = ("" + resultSet.getObject("Email"));
-                address = ("" + resultSet.getObject("Address"));
                 userID = ("" + resultSet.getObject("UserID"));
                 password = ("" + resultSet.getObject("Password"));
-                associateTitle = ("" + resultSet.getObject("AssociateTitle"));
-                Associate a = new Associate(name,phone,email,address,userID, password, associateTitle);
-                associates.add(a);
+                Admin a = new Admin(userID,password);
+                admins.add(a);
             }
         } catch (SQLException e) {
             System.out.println("ERROR CONNECTING TO DATABASE OR EXECUTING QUERY");
         }
     }
 
-    /**
-     * Collects and stores customer information from a local database so the data can be easily accessed
-     * from other classes without having to connect to a database.
-     */
-    public static void customerAssignment() {
-        String name, phone, email, address;
-
-        String host = "jdbc:mysql://localhost:3306/clientInfo";
-        String user = "root";
-        String password = "aTundeAdjuah_22!";
-
-        try {
-            Connection connection = DriverManager.getConnection(host, user, password);//Establishing connection
-            PreparedStatement statement = connection.prepareStatement("select * from client where client.Name <> 'null'");
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                name = ("" + resultSet.getObject("Name"));
-                phone = ("" + resultSet.getObject("Phone"));
-                email = ("" + resultSet.getObject("Email"));
-                address = ("" + resultSet.getObject("Address"));
-                Customer c = new Customer(name,phone,email,address);
-                customers.add(c);
-            }
-        } catch (SQLException e) {
-            System.out.println("ERROR CONNECTING TO DATABASE OR EXECUTING QUERY");
-        }
-    }
-
-    public static ArrayList<Associate> getAssociates() {
-        return associates;
-    }
-
-    public static ArrayList<Customer> getCustomers() {
-        return customers;
-    }
-
-    public static ArrayList<Item> getItems() {
-        return items;
-    }
-
-    public static void setLoggedIn(boolean loggedIn) {
-        Main.loggedIn = loggedIn;
-    }
-
-    public static boolean isLoggedIn() {
-        return loggedIn;
+    public static ArrayList<Admin> getAdmins() {
+        return admins;
     }
 }

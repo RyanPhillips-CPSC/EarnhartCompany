@@ -1,30 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.LoginController">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.LoginController">
    <children>
-      <ImageView fx:id="farmImage" fitHeight="546.0" fitWidth="400.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
-      <BorderPane layoutX="-23.0" layoutY="38.0" prefHeight="491.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+      <ImageView fx:id="backgroundImage" fitHeight="546.0" fitWidth="400.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
+      <BorderPane layoutX="-23.0" layoutY="38.0" prefHeight="511.0" prefWidth="360.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="38.0">
          <top>
-            <ImageView fx:id="myImageView" fitHeight="96.0" fitWidth="357.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="40.0" prefWidth="367.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="42.0" />
+                        <Label prefHeight="40.0" prefWidth="41.0" text="THE " textFill="WHITE">
+                           <font>
+                              <Font name="Bell MT" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="34.0" prefWidth="154.0" text="EARNHART" textFill="WHITE">
+                           <font>
+                              <Font name="Bell MT" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="40.0" prefWidth="88.0" text="COMPANY" textFill="WHITE">
+                           <font>
+                              <Font name="Bell MT" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="367.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="88.0" />
+                        <Label prefHeight="26.0" prefWidth="194.0" text="FREDERICKSBURG|BOSTON" textFill="#dcdcdc">
+                           <font>
+                              <Font name="Bell MT" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
          </top>
       </BorderPane>
-      <BorderPane prefHeight="636.0" prefWidth="717.0" AnchorPane.bottomAnchor="-107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="border" prefHeight="675.0" prefWidth="367.0" AnchorPane.bottomAnchor="-126.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <MenuBar opacity="0.9" prefHeight="30.0" prefWidth="718.0">
               <menus>
@@ -36,7 +76,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#helpDisplay" text="About" />
+                    <MenuItem mnemonicParsing="false" text="About" />
                   </items>
                 </Menu>
               </menus>
@@ -45,7 +85,7 @@
          <center>
             <Group BorderPane.alignment="CENTER">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="248.0" opacity="0.92" stroke="#fffdfd" strokeType="INSIDE" width="295.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="248.0" opacity="0.88" stroke="#fffdfd" strokeType="INSIDE" width="295.0" />
                   <GridPane layoutX="25.0" layoutY="28.0" prefHeight="105.0" prefWidth="249.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -57,7 +97,6 @@
                      </rowConstraints>
                      <children>
                         <TextField fx:id="userIDLogin" GridPane.columnIndex="1" />
-                        <TextField fx:id="passwordLogin" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label prefHeight="18.0" prefWidth="74.0" text="UserID">
                            <font>
                               <Font name="Bodoni MT" size="14.0" />
@@ -68,10 +107,11 @@
                               <Font name="Bodoni MT" size="15.0" />
                            </font>
                         </Label>
+                        <PasswordField fx:id="passwordLogin" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
-                  <Button layoutX="65.0" layoutY="168.0" mnemonicParsing="false" onAction="#submit" prefHeight="30.0" prefWidth="165.0" text="Sign In" />
-                  <Label fx:id="InvalidLabel" alignment="TOP_LEFT" layoutX="88.0" layoutY="210.0" prefHeight="25.0" prefWidth="190.0" text="*Invalid credentials" textFill="#f70505" visible="false" />
+                  <Button layoutX="85.0" layoutY="169.0" mnemonicParsing="false" onAction="#submit" prefHeight="30.0" prefWidth="100.0" text="Sign In" />
+                  <Label fx:id="InvalidLabel" alignment="TOP_LEFT" layoutX="88.0" layoutY="210.0" prefHeight="25.0" prefWidth="190.0" text="   *Invalid credentials" textFill="#f70505" visible="false" />
                </children>
             </Group>
          </center>

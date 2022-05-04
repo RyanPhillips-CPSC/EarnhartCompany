@@ -3,7 +3,7 @@ package com.example.demo1;
 import java.io.FileNotFoundException;
 
 /**
- * Launches the platform
+ * Launches platform
  */
 public class Launcher {
 
