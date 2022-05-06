@@ -108,42 +108,35 @@
                   </VBox>
                   <HBox fx:id="menuHBox" prefHeight="487.0" prefWidth="702.0">
                      <children>
-                        <VBox fx:id="clientHBox" prefHeight="481.0" prefWidth="226.0">
+                        <VBox fx:id="centralVBox">
                            <children>
-                              <Label alignment="CENTER" prefHeight="62.0" prefWidth="259.0">
-                                 <font>
-                                    <Font name="Bell MT" size="1.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="imageButton1" fitHeight="150.0" fitWidth="114.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="imageButton2" fitHeight="150.0" fitWidth="114.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="imageButton3" fitHeight="150.0" fitWidth="114.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
-                           </children>
-                        </VBox>
-                        <Separator orientation="VERTICAL" prefHeight="481.0" prefWidth="0.0" />
-                        <VBox fx:id="ordersHBox" prefHeight="481.0" prefWidth="226.0">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="62.0" prefWidth="246.0">
-                                 <font>
-                                    <Font name="Bell MT" size="1.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="imageButton1" fitHeight="150.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="imageButton2" fitHeight="150.0" fitWidth="114.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="imageButton3" fitHeight="150.0" fitWidth="114.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
-                           </children>
-                        </VBox>
-                        <Separator orientation="VERTICAL" prefHeight="200.0" />
-                        <VBox fx:id="productHBox" prefHeight="481.0" prefWidth="226.0">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="62.0" prefWidth="244.0">
-                                 <font>
-                                    <Font name="Bell MT" size="1.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="imageButton1" fitHeight="150.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="imageButton2" fitHeight="150.0" fitWidth="114.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="imageButton3" fitHeight="150.0" fitWidth="114.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                              <HBox fx:id="hBox1" prefHeight="74.0" prefWidth="619.0">
+                                 <children>
+                                    <ImageView fx:id="imageButton1" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton2" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton3" fitHeight="81.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton4" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton5" fitHeight="84.0" fitWidth="83.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton6" fitHeight="84.0" fitWidth="83.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="hBox2" prefHeight="58.0" prefWidth="619.0">
+                                 <children>
+                                    <ImageView fx:id="imageButton7" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton8" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton9" fitHeight="81.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton10" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton11" fitHeight="84.0" fitWidth="83.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton12" fitHeight="84.0" fitWidth="83.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="hBox3" prefHeight="58.0" prefWidth="619.0">
+                                 <children>
+                                    <ImageView fx:id="imageButton13" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton14" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton15" fitHeight="81.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
                      </children>

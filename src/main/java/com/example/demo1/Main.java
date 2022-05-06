@@ -25,13 +25,14 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 364, 549, Color.TRANSPARENT);
+        Scene scene = new Scene(fxmlLoader.load(), 362, 549, Color.TRANSPARENT);
         stage.setTitle("The Earnhart Company");
         stage.setResizable(false);
         stage.setScene(scene);
         scene.getStylesheets().add("loginStyle.css");
         stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/Images/windowIcon.png"))));
         stage.show();
+        stage.centerOnScreen();
     }
 
     /**

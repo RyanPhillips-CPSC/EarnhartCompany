@@ -2,7 +2,11 @@ package com.example.demo1;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToolBar;
@@ -12,12 +16,26 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainMenuController extends Controller implements Initializable {
+
+    private Stage stage;
+    private Scene scene;
+
+    @FXML
+    private HBox updateHBox;
+
+    @FXML
+    private HBox hBox1;
+
+    @FXML
+    private HBox hBox2;
 
     @FXML
     private Label versionLabel;
@@ -30,6 +48,9 @@ public class MainMenuController extends Controller implements Initializable {
 
     @FXML
     private ToolBar toolBar;
+
+    @FXML
+    private VBox centralVBox;
 
     @FXML
     private ImageView logoImage;
@@ -117,8 +138,14 @@ public class MainMenuController extends Controller implements Initializable {
     }
 
     @FXML
-    void newClient(MouseEvent event) {
-
+    void newClient(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Controller.class.getResource("NewProfile.fxml"));
+        Parent mainCallWindowFXML = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(mainCallWindowFXML, 900, 650, Color.TRANSPARENT);
+        scene.getStylesheets().add("ProfileStyle.css");
+        stage.setScene(scene);
+        stage.centerOnScreen();
     }
 
     @FXML

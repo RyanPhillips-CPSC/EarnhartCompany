@@ -20,3 +20,6 @@
 #backgroundImage {
     -fx-image: url(Images/picSix.png);
 }
+#menuBar {
+    -fx-opacity: .8;
+}

@@ -53,7 +53,6 @@ public abstract class Controller {
         scene = new Scene(root, 800,560, Color.TRANSPARENT);
         scene.getStylesheets().add("records.css");
         stage.setScene(scene);
-        stage.setTitle("Customer Form");
         stage.setY(30);
         stage.show();
         stage.centerOnScreen();

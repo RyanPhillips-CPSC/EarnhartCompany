@@ -103,14 +103,17 @@ public class AboutSceneController extends Controller implements Initializable {
     }
 
     @FXML
+    void aboutScene(ActionEvent event) throws IOException {
+        super.aboutScene(mouthpieceIcon);
+    }
+
+    @FXML
     void returnHome(ActionEvent event) throws IOException {
         super.returnHome(event);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        homeButton.setDisable(false);
-        homeButton.setStyle("-fx-background-color: white");
         aboutButton.setDisable(true);
         aboutButton.setStyle("-fx-background-color: blue");
     }

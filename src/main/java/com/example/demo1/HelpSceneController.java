@@ -104,10 +104,13 @@ public class HelpSceneController extends Controller implements Initializable {
         super.returnHome(event);
     }
 
+    @FXML
+    void aboutScene(ActionEvent event) throws IOException {
+        super.aboutScene(mouthpieceIcon);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        homeButton.setDisable(false);
-        homeButton.setStyle("-fx-background-color: white");
         helpButton.setDisable(true);
         helpButton.setStyle("-fx-background-color: blue");
     }

@@ -53,7 +53,7 @@
             <HBox prefHeight="40.0" prefWidth="191.0" style="-fx-padding: 0 15 15 0;">
                <children>
                   <ImageView fx:id="mouthpieceIcon" fitHeight="44.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 15;" />
-                  <Button fx:id="aboutButton" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="44.0" prefWidth="130.0" text="About" textAlignment="CENTER" />
+                  <Button fx:id="aboutButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#aboutScene" prefHeight="44.0" prefWidth="130.0" text="About" textAlignment="CENTER" />
                </children>
             </HBox>
             <Separator prefWidth="200.0" />

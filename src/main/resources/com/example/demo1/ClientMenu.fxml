@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HelpSceneController">
+<BorderPane fx:id="border" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ClientMenuController">
    <top>
       <HBox prefHeight="65.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
@@ -53,7 +53,7 @@
             <HBox prefHeight="40.0" prefWidth="191.0" style="-fx-padding: 0 15 15 0;">
                <children>
                   <ImageView fx:id="mouthpieceIcon" fitHeight="44.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 15;" />
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#aboutScene" prefHeight="44.0" prefWidth="130.0" text="About" textAlignment="CENTER" />
+                  <Button fx:id="aboutButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#aboutScene" prefHeight="44.0" prefWidth="130.0" text="About" textAlignment="CENTER" />
                </children>
             </HBox>
             <Separator prefWidth="200.0" />
@@ -106,7 +106,30 @@
                         <ImageView fx:id="logoImage" fitHeight="109.0" fitWidth="532.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </VBox>
-                  <HBox fx:id="menuHBox" prefHeight="487.0" prefWidth="702.0" />
+                  <HBox fx:id="menuHBox" prefHeight="487.0" prefWidth="702.0">
+                     <children>
+                        <VBox prefHeight="474.0" prefWidth="661.0">
+                           <children>
+                              <HBox prefHeight="52.0" prefWidth="679.0">
+                                 <children>
+                                    <ImageView fx:id="profileImage" fitHeight="52.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label fx:id="clientLabel" prefHeight="52.0" prefWidth="654.0" text="Client Name" />
+                                 </children>
+                              </HBox>
+                              <Label prefHeight="18.0" prefWidth="729.0" />
+                              <VBox fx:id="contentBox" prefHeight="477.0" prefWidth="662.0">
+                                 <children>
+                                    <HBox fx:id="hBox1" prefHeight="0.0" prefWidth="559.0">
+                                       <children>
+                                          <ImageView fx:id="image1" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#editProfile" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="image2" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#consultation" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                 </children></VBox>
+                              <Label prefHeight="132.0" prefWidth="674.0" />
+                           </children>
+                        </VBox>
+                     </children></HBox>
                </children>
             </VBox>
          </children>

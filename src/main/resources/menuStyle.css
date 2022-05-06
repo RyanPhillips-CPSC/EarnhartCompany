@@ -15,7 +15,7 @@
 }
 #menuHBox {
     -fx-label-padding: 10 20 20 10;
-    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-background-color: rgba(255, 228, 196, 0.8);
 }
 #clientHBox {
     -fx-background-color: rgba(255, 228, 196, 0.8);
@@ -57,17 +57,60 @@
 }
 #imageButton1  {
     -fx-image: url(Images/clientProfile.png);
-    -fx-translate-x: 56;
 }
 #imageButton2 {
     -fx-image: url(Images/editProfile.png);
-    -fx-translate-x: 56;
-    -fx-translate-y: 10;
+    -fx-translate-x: 10;
 }
 #imageButton3 {
     -fx-image: url(Images/searchClient.png);
-    -fx-translate-x: 56;
-    -fx-translate-y: 20;
+    -fx-translate-x: 20;
+}
+#imageButton4  {
+    -fx-image: url(Images/clientProfile.png);
+    -fx-translate-x: 30;
+}
+#imageButton5 {
+    -fx-image: url(Images/editProfile.png);
+    -fx-translate-x: 40;
+}
+#imageButton6 {
+    -fx-image: url(Images/searchClient.png);
+    -fx-translate-x: 50;
+}
+#imageButton7  {
+    -fx-image: url(Images/clientProfile.png);
+}
+#imageButton8 {
+    -fx-image: url(Images/editProfile.png);
+    -fx-translate-x: 10;
+}
+#imageButton9 {
+    -fx-image: url(Images/searchClient.png);
+    -fx-translate-x: 20;
+}
+#imageButton10 {
+    -fx-image: url(Images/clientProfile.png);
+    -fx-translate-x: 30;
+}
+#imageButton11 {
+    -fx-image: url(Images/editProfile.png);
+    -fx-translate-x: 40;
+}
+#imageButton12 {
+    -fx-image: url(Images/searchClient.png);
+    -fx-translate-x: 50;
+}
+#imageButton13  {
+    -fx-image: url(Images/clientProfile.png);
+}
+#imageButton14 {
+    -fx-image: url(Images/editProfile.png);
+    -fx-translate-x: 10;
+}
+#imageButton15 {
+    -fx-image: url(Images/searchClient.png);
+    -fx-translate-x: 20;
 }
 #logoImage {
     -fx-image: url(Images/LOGO_2.png);
@@ -91,4 +134,17 @@
     -fx-font-family: SansSerif;
     -fx-text-fill: #810000;
     -fx-padding: 10 10 0 10;
+}
+#centralVBox {
+    -fx-padding: 60 40 40 40;
+    -fx-border-color: bisque;
+}
+#hBox1 {
+    -fx-padding: 0 0 0 30;
+}
+#hBox2 {
+    -fx-padding: 27 0 0 30;
+}
+#hBox3 {
+    -fx-padding: 27 0 0 30;
 }
