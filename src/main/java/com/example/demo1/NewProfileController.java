@@ -7,12 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -30,28 +27,7 @@ public class NewProfileController extends Controller implements Initializable {
     private Scene scene;
 
     @FXML
-    private Button aboutButton;
-
-    @FXML
     private TextField addressText;
-
-    @FXML
-    private Label boldLabel;
-
-    @FXML
-    private BorderPane border;
-
-    @FXML
-    private Label centerLabel;
-
-    @FXML
-    private Pane centerPane;
-
-    @FXML
-    private VBox centerVBox;
-
-    @FXML
-    private VBox contentBox;
 
     @FXML
     private TextField emailText;
@@ -60,61 +36,17 @@ public class NewProfileController extends Controller implements Initializable {
     private TextField fNameText;
 
     @FXML
-    private Button helpButton;
-
-    @FXML
-    private Button homeButton;
-
-    @FXML
     private Label invalidLabel;
 
     @FXML
     private TextField lNameText;
 
     @FXML
-    private VBox leftColumn;
-
-    @FXML
-    private ImageView logoImage;
-
-    @FXML
-    private Label mainLogo;
-
-    @FXML
-    private HBox menuHBox;
-
-    @FXML
     private ImageView mouthpieceIcon;
-
-    @FXML
-    private Label optionLabel;
 
     @FXML
     private TextField phoneText;
 
-    @FXML
-    private ImageView profileImage;
-
-    @FXML
-    private Pane rightPane;
-
-    @FXML
-    private Button settingsButton;
-
-    @FXML
-    private Button submitButton;
-
-    @FXML
-    private ToolBar toolBar;
-
-    @FXML
-    private Label topRightLabel;
-
-    @FXML
-    private VBox vBoxProfile;
-
-    @FXML
-    private Label versionLabel;
 
     @FXML
     void helpScene(ActionEvent event) throws IOException {

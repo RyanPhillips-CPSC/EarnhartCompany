@@ -20,8 +20,9 @@
       <HBox prefHeight="65.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="mainLogo" prefHeight="66.0" prefWidth="304.0" style="-fx-label-padding: 10;" text="    TECims" />
-            <Separator orientation="VERTICAL" prefHeight="66.0" prefWidth="0.0" style="-fx-padding: 8 0 8 0;" />
+            <Separator fx:id="separator" orientation="VERTICAL" prefHeight="66.0" prefWidth="0.0" style="-fx-padding: 8 0 8 0;" />
             <Button fx:id="homeButton" mnemonicParsing="false" onAction="#returnHome" prefHeight="44.0" prefWidth="0.0" />
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#clientMenu" prefHeight="44.0" prefWidth="0.0" text="&lt;" />
             <HBox alignment="CENTER_RIGHT" prefHeight="66.0" prefWidth="680.0">
                <children>
                   <Label fx:id="topRightLabel" alignment="CENTER" prefHeight="66.0" prefWidth="227.0" style="-fx-label-padding: 15;" text="                 The Earnhart Company" textFill="#e1c3c3" />

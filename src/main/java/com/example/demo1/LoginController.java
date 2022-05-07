@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class LoginController extends Controller implements Runnable {
+public class LoginController extends Controller {
 
     private boolean valid = false;
     private Stage stage;
@@ -36,6 +36,7 @@ public class LoginController extends Controller implements Runnable {
      */
     @FXML
     void submit(ActionEvent event) throws IOException {
+
         int index = -1;
         String username = userIDLogin.getText();
         for (int i = 0; i < Main.getAdmins().size(); i++) { //find the admin with the matching userID
@@ -63,10 +64,5 @@ public class LoginController extends Controller implements Runnable {
             userIDLogin.setText("");
             passwordLogin.setText("");
         }
-    }
-
-    @Override
-    public void run() {
-        //TODO ==   CREATE A TRANSITIONAL LOADING ANIMATION
     }
 }

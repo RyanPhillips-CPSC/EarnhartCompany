@@ -7,18 +7,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ConsultationController extends Controller implements Initializable {
@@ -30,79 +30,10 @@ public class ConsultationController extends Controller implements Initializable 
     private Label invalidLabel;
 
     @FXML
-    private Label updateLabel;
-
-    @FXML
     private TextArea mainTextArea;
 
     @FXML
-    private Button aboutButton;
-
-    @FXML
-    private BorderPane border;
-
-    @FXML
-    private Pane centerPane;
-
-    @FXML
-    private VBox centerVBox;
-
-    @FXML
-    private Label clientLabel;
-
-    @FXML
-    private VBox contentBox;
-
-    @FXML
-    private ChoiceBox<String> dropDown;
-
-    @FXML
-    private Button helpButton;
-
-    @FXML
-    private Button homeButton;
-
-    @FXML
-    private VBox leftColumn;
-
-    @FXML
-    private ImageView logoImage;
-
-    @FXML
-    private Label mainLogo;
-
-    @FXML
-    private HBox menuHBox;
-
-    @FXML
     private ImageView mouthpieceIcon;
-
-    @FXML
-    private Label optionLabel;
-
-    @FXML
-    private ImageView profileImage;
-
-    @FXML
-    private Pane rightPane;
-
-    @FXML
-    private Button settingsButton;
-
-    @FXML
-    private ToolBar toolBar;
-
-    @FXML
-    private Label topRightLabel;
-
-    @FXML
-    private HBox updateHBox;
-
-    @FXML
-    private TextField updateText;
-
-    @FXML
-    private Label versionLabel;
 
 
     @FXML

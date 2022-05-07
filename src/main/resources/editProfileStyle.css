@@ -156,3 +156,16 @@
 #submitHBox {
     -fx-translate-y: 45;
 }
+#backButton {
+    -fx-translate-x: 45;
+    -fx-background-color: #31b731;
+}
+#backButton:hover  {
+    -fx-background-color: #a2fda2;
+}
+#separator {
+    -fx-translate-x: 15;
+}
+#homeButton {
+    -fx-translate-x: 30;
+}

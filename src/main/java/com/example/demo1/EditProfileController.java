@@ -3,13 +3,11 @@ package com.example.demo1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,73 +26,16 @@ public class EditProfileController extends Controller implements Initializable {
     private TextArea mainTextArea;
 
     @FXML
-    private Button aboutButton;
-
-    @FXML
-    private BorderPane border;
-
-    @FXML
-    private Pane centerPane;
-
-    @FXML
-    private VBox centerVBox;
-
-    @FXML
     private Label clientLabel;
-
-    @FXML
-    private VBox contentBox;
 
     @FXML
     private ChoiceBox<String> dropDown;
 
     @FXML
-    private Button helpButton;
-
-    @FXML
-    private Button homeButton;
-
-    @FXML
-    private VBox leftColumn;
-
-    @FXML
-    private ImageView logoImage;
-
-    @FXML
-    private Label mainLogo;
-
-    @FXML
-    private HBox menuHBox;
-
-    @FXML
     private ImageView mouthpieceIcon;
 
     @FXML
-    private Label optionLabel;
-
-    @FXML
-    private ImageView profileImage;
-
-    @FXML
-    private Pane rightPane;
-
-    @FXML
-    private Button settingsButton;
-
-    @FXML
-    private ToolBar toolBar;
-
-    @FXML
-    private Label topRightLabel;
-
-    @FXML
-    private HBox updateHBox;
-
-    @FXML
     private TextField updateText;
-
-    @FXML
-    private Label versionLabel;
 
     @FXML
     void helpScene(ActionEvent event) throws IOException {
@@ -109,6 +50,11 @@ public class EditProfileController extends Controller implements Initializable {
     @FXML
     void returnHome(ActionEvent event) throws IOException {
         super.returnHome(event);
+    }
+
+    @FXML
+    void clientMenu(ActionEvent event) {
+
     }
 
     public void setMainTextArea() {
@@ -172,38 +118,6 @@ public class EditProfileController extends Controller implements Initializable {
         dropDown.getItems().add("Shipping Address");
 
         setMainTextArea();
-        /*
-        String host = "jdbc:mysql://localhost:3306/theearnhartcompany";
-        String user = "Ryan";
-        String password = "aTundeAdjuah_22!";
-
-        try {
-            Connection connection = DriverManager.getConnection(host, user, password);
-            PreparedStatement statement = connection.prepareStatement("select * from clientprofile where FName <> 'null'");
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                phone = ("" + resultSet.getObject("Phone"));
-                email = ("" + resultSet.getObject("Email"));
-                address = ("" + resultSet.getObject("Address"));
-                firstName = ("" + resultSet.getObject("FName"));
-                lastname = ("" + resultSet.getObject("LName"));
-                consultation = ("" + resultSet.getObject("Consultation"));
-            }
-        } catch (SQLException e) {
-            System.out.println("" + e + "");
-        }
-
-        if (consultation.equals("null")) {
-            mainTextArea.setText("Existing Profile Data\n" + Profile.getLastName() + ", " + Profile.getFirstName() +
-                    "\n\nPhone : " + phone + "\n" + "Email : " + email + "\n" + "Address : " + address + "\n\n" + "No Existing Consultation");
-        } else {
-            mainTextArea.setText("Existing Profile Data\n" + Profile.getLastName() + ", " + Profile.getFirstName() +
-                    "\n\nPhone : " + phone + "\n" + "Email : " + email + "\n" + "Address : " + address + "\n\n" + "Consultation : \n"
-                    + consultation + "\n");
-        }
-
-         */
     }
 
     @FXML

@@ -23,3 +23,7 @@
 #menuBar {
     -fx-opacity: .8;
 }
+#progressIndicator {
+    -fx-translate-y: 150;
+    -fx-translate-x: 150;
+}
