@@ -28,6 +28,16 @@ public class ClientMenuController extends Controller implements Initializable {
     @FXML
     private ImageView mouthpieceIcon;
 
+    @FXML
+    void editConsultation(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Controller.class.getResource("EditConsultation.fxml"));
+        Parent mainCallWindowFXML = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(mainCallWindowFXML, 900, 650, Color.TRANSPARENT);
+        scene.getStylesheets().add("editConsultationStyle.css");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+    }
 
     @FXML
     void consultation(MouseEvent event) throws IOException {

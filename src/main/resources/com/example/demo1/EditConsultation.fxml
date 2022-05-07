@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -12,13 +13,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="border" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ClientMenuController">
+<BorderPane fx:id="border" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.EditConsultationController">
    <top>
       <HBox prefHeight="65.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="mainLogo" prefHeight="66.0" prefWidth="304.0" style="-fx-label-padding: 10;" text="    TECims" />
-            <Separator orientation="VERTICAL" prefHeight="66.0" prefWidth="0.0" style="-fx-padding: 8 0 8 0;" />
+            <Separator fx:id="separator" orientation="VERTICAL" prefHeight="66.0" prefWidth="0.0" style="-fx-padding: 8 0 8 0;" />
             <Button fx:id="homeButton" mnemonicParsing="false" onAction="#returnHome" prefHeight="44.0" prefWidth="0.0" />
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#clientMenu" prefHeight="44.0" prefWidth="0.0" text="&lt;" />
             <HBox alignment="CENTER_RIGHT" prefHeight="66.0" prefWidth="680.0">
                <children>
                   <Label fx:id="topRightLabel" alignment="CENTER" prefHeight="66.0" prefWidth="227.0" style="-fx-label-padding: 15;" text="                 The Earnhart Company" textFill="#e1c3c3" />
@@ -119,11 +121,11 @@
                               <Label prefHeight="18.0" prefWidth="729.0" />
                               <VBox fx:id="contentBox" prefHeight="477.0" prefWidth="662.0">
                                  <children>
-                                    <HBox fx:id="hBox1" prefHeight="0.0" prefWidth="559.0">
+                                    <TextArea fx:id="mainTextArea" prefHeight="200.0" prefWidth="312.0" />
+                                    <HBox fx:id="submitHBox" prefHeight="33.0" prefWidth="615.0">
                                        <children>
-                                          <ImageView fx:id="image1" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#editProfile" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
-                                          <ImageView fx:id="image2" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#consultation" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
-                                          <ImageView fx:id="image3" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#editConsultation" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="invalidLabel" text="*FIELD REQUIRED" />
+                                          <Button fx:id="updateButton" mnemonicParsing="false" onAction="#submit" prefHeight="0.0" prefWidth="74.0" text="Update" />
                                        </children>
                                     </HBox>
                                  </children></VBox>

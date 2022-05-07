@@ -87,7 +87,15 @@
     -fx-font-size: 15;
     -fx-font-weight: bold;
 }
-#updateButton:hover {
+#submitButton {
+    -fx-background-color: blue;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-translate-x: 105;
+    -fx-translate-y: 35;
+    -fx-text-fill: white;
+}
+#submitButton:hover {
     -fx-background-color: #9395ff;
 }
 #invalidLabel {
@@ -146,5 +154,18 @@
     -fx-font-size: 14;
 }
 #submitHBox {
-    -fx-translate-y: 30;
+    -fx-translate-y: 45;
+}
+#backButton {
+    -fx-translate-x: 45;
+    -fx-background-color: #31b731;
+}
+#backButton:hover  {
+    -fx-background-color: #a2fda2;
+}
+#separator {
+    -fx-translate-x: 15;
+}
+#homeButton {
+    -fx-translate-x: 30;
 }
