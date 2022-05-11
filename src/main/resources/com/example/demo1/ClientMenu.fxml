@@ -124,6 +124,8 @@
                                           <ImageView fx:id="image1" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#editProfile" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
                                           <ImageView fx:id="image2" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#consultation" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
                                           <ImageView fx:id="image3" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#editConsultation" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="image5" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#newOrder" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="image4" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#select" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
                                        </children>
                                     </HBox>
                                  </children></VBox>

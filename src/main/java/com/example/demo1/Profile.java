@@ -1,5 +1,11 @@
 package com.example.demo1;
 
+import java.util.ArrayList;
+import java.util.Hashtable;
+
+/**
+ * Used to temporarily store information about the currently selected profile
+ */
 public class Profile {
 
     private static String firstName;
@@ -7,6 +13,8 @@ public class Profile {
     private static String email;
     private static String address;
     private static String phone;
+    private static String consultation;
+    private static String clientID;
 
     public static String getFirstName() {
         return firstName;
@@ -46,5 +54,21 @@ public class Profile {
 
     public static void setLastName(String lastName) {
         Profile.lastName = lastName;
+    }
+
+    public static String getConsultation() {
+        return consultation;
+    }
+
+    public static void setConsultation(String consultation) {
+        Profile.consultation = consultation;
+    }
+
+    public static String getClientID() {
+        return clientID;
+    }
+
+    public static void setClientID(String clientID) {
+        Profile.clientID = clientID;
     }
 }

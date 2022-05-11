@@ -63,20 +63,26 @@
     -fx-padding: 10 10 0 10;
 }
 #profileImage {
+    -fx-translate-y: -18;
+    -fx-translate-x: 26;
     -fx-image: url(Images/ProfileNew.png);
-    -fx-translate-y: 10;
-    -fx-translate-x: 15;
 }
 #vBoxProfile {
     -fx-padding: 25;
 }
 #contentBox {
-    -fx-translate-x: 15;
+    -fx-translate-x: 30;
     -fx-padding: 50;
-    -fx-background-radius: 20;
-    -fx-border-radius: 20;
-    -fx-background-color: rgba(255, 255, 255, 0.3);
-    -fx-border-color: rgba(255, 255, 255, 0.7);
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-background-color: rgba(255, 255, 255, 0.7);
+}
+#contentBox2 {
+    -fx-translate-y: 15;
+    -fx-translate-x: 15;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-background-color: rgba(255, 255, 255, 0.7);
 }
 #centerLabel {
     -fx-font-family: "Book Antiqua";
@@ -87,49 +93,64 @@
     -fx-font-size: 15;
     -fx-font-weight: bold;
 }
+#boldLabel2 {
+    -fx-font-family: "Book Antiqua";
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-translate-y: -10;
+    -fx-translate-x: -5;
+}
 #submitButton {
     -fx-background-color: blue;
     -fx-border-radius: 50;
     -fx-background-radius: 50;
     -fx-translate-x: 105;
-    -fx-translate-y: 35;
+    -fx-translate-y: 28;
     -fx-text-fill: white;
 }
 #submitButton:hover {
     -fx-background-color: #9395ff;
 }
 #invalidLabel {
-    -fx-translate-y: 42;
-    -fx-translate-x: 31;
+    -fx-translate-x: 235;
+    -fx-translate-y: 3;
     -fx-font-family: SansSerif;
     -fx-text-fill: red;
     -fx-font-size: 13;
 }
 #clientLabel {
-    -fx-translate-x: 28;
-    -fx-translate-y: 9;
+    -fx-translate-x: 40;
+    -fx-translate-y: -5;
     -fx-font-family: "Bell MT";
     -fx-font-size: 20;
 }
-#image1 {
-    -fx-image: url(Images/editProfile.png);
+#clientHBox {
+    -fx-background-color: rgba(255, 228, 196, 0.8);
 }
-#image2 {
-    -fx-image: url(Images/consultation.png);
-    -fx-translate-x: 15;
+#scrollPane {
+    -fx-translate-x: -25;
 }
-#image3 {
-    -fx-image: url(Images/editConsultation.png);
-    -fx-translate-x: 30;
+#generateButton {
+    -fx-background-color: blue;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-translate-x: 7;
+    -fx-translate-y: 20;
+    -fx-text-fill: white;
 }
-#image4 {
-    -fx-image: url(Images/searchClient.png);
-    -fx-translate-x: 60;
+#generateButton:hover {
+    -fx-background-color: #9395ff;
 }
-#image5 {
-    -fx-image: url(Images/newOrder.png);
-    -fx-translate-x: 45;
+#itemDropDown {
+    -fx-translate-y: -11;
+    -fx-translate-x: 4;
 }
-#hBox1 {
-    -fx-translate-y: -15;
+#gridPane1 {
+    -fx-padding: 10;
+}
+#nameLabel11 {
+    -fx-translate-x: 3;
+}
+#priceLabel {
+    -fx-translate-x: 3;
 }

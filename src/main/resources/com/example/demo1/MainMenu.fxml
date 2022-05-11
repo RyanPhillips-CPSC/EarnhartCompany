@@ -114,7 +114,7 @@
                                  <children>
                                     <ImageView fx:id="imageButton1" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
                                     <ImageView fx:id="imageButton2" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
-                                    <ImageView fx:id="imageButton3" fitHeight="81.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="imageButton3" fitHeight="81.0" fitWidth="85.0" onMouseClicked="#select" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
                                     <ImageView fx:id="imageButton4" fitHeight="80.0" fitWidth="85.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
                                     <ImageView fx:id="imageButton5" fitHeight="84.0" fitWidth="83.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />
                                     <ImageView fx:id="imageButton6" fitHeight="84.0" fitWidth="83.0" onMouseClicked="#newClient" onMouseEntered="#entered" onMouseExited="#exited" pickOnBounds="true" preserveRatio="true" />

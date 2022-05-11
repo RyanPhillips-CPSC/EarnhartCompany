@@ -66,6 +66,17 @@ public class MainMenuController extends Controller implements Initializable {
         super.returnHome(event);
     }
 
+    @FXML
+    void select(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Controller.class.getResource("SelectScene.fxml"));
+        Parent mainCallWindowFXML = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(mainCallWindowFXML, 900, 650, Color.TRANSPARENT);
+        scene.getStylesheets().add("selectStyle.css");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         homeButton.setDisable(true);

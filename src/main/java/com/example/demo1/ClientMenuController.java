@@ -92,4 +92,26 @@ public class ClientMenuController extends Controller implements Initializable {
         stage.setScene(scene);
         stage.centerOnScreen();
     }
+
+    @FXML
+    void newOrder(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Controller.class.getResource("NewOrder.fxml"));
+        Parent mainCallWindowFXML = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(mainCallWindowFXML, 900, 650, Color.TRANSPARENT);
+        scene.getStylesheets().add("newOrderStyle.css");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+    }
+
+    @FXML
+    void select(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Controller.class.getResource("SelectScene.fxml"));
+        Parent mainCallWindowFXML = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(mainCallWindowFXML, 900, 650, Color.TRANSPARENT);
+        scene.getStylesheets().add("selectStyle.css");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+    }
 }

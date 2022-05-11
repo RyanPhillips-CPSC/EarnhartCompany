@@ -75,11 +75,11 @@ public class EditProfileController extends Controller implements Initializable {
     public void setMainTextArea() {
         clientLabel.setText(Profile.getLastName() + ", " + Profile.getFirstName());
 
+        String id = Profile.getClientID();
+
         String phone = "";
         String email = "";
         String address = "";
-        String firstName = "";
-        String lastname = "";
         String consultation = "";
 
         String host = "jdbc:mysql://localhost:3306/theearnhartcompany";
@@ -88,15 +88,13 @@ public class EditProfileController extends Controller implements Initializable {
 
         try {
             Connection connection = DriverManager.getConnection(host, user, password);
-            PreparedStatement statement = connection.prepareStatement("select * from clientprofile where FName <> 'null'");
+            PreparedStatement statement = connection.prepareStatement("select * from clientprofile where clientID = '" + id + "'");
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 phone = ("" + resultSet.getObject("Phone"));
                 email = ("" + resultSet.getObject("Email"));
                 address = ("" + resultSet.getObject("Address"));
-                firstName = ("" + resultSet.getObject("FName"));
-                lastname = ("" + resultSet.getObject("LName"));
                 consultation = ("" + resultSet.getObject("Consultation"));
             }
         } catch (SQLException e) {

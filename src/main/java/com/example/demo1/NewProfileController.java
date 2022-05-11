@@ -15,10 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class NewProfileController extends Controller implements Initializable {
@@ -75,13 +72,32 @@ public class NewProfileController extends Controller implements Initializable {
         String email = emailText.getText().strip();
         String address = addressText.getText().strip();
 
+        String currentID = "";
+
         if (firstName.equals("") || lastName.equals("") || phone.equals("") || email.equals("") || address.equals("")) {
             invalidLabel.setVisible(true);
         } else {
             try {
+                Connection connection2 = DriverManager.getConnection(host, user, password);
+                PreparedStatement preparedStatement2 = connection2.prepareStatement("select ID from clientid");
+                ResultSet resultSet = preparedStatement2.executeQuery();
+
+                while (resultSet.next()) {
+                    currentID = ("" + resultSet.getObject("ID"));
+                }
+
                 Connection connection = DriverManager.getConnection(host, user, password);
-                PreparedStatement preparedStatement = connection.prepareStatement("insert into clientProfile values ('" + phone + "','" + email + "','" + address + "','" + firstName + "','" + lastName + "', null)");
+                PreparedStatement preparedStatement = connection.prepareStatement("insert into clientProfile values ('" + phone + "','" + email + "','" + address + "','" + firstName + "','" + lastName + "', null, '" + currentID + "')");
                 preparedStatement.executeUpdate();
+
+                int updatedID = Integer.parseInt(currentID);
+                updatedID++;
+                String updatedString = String.valueOf(updatedID);
+
+                Connection connection3 = DriverManager.getConnection(host, user, password);
+                PreparedStatement preparedStatement3 = connection3.prepareStatement("update clientid set ID = '" + updatedString + "'");
+                preparedStatement3.executeUpdate();
+
             } catch (SQLException e) {
                 System.out.println("" + e + "");
             }

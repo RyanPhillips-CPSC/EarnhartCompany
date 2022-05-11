@@ -157,6 +157,7 @@
     -fx-translate-y: 45;
 }
 #backButton {
+    -fx-font-family: SansSerif;
     -fx-translate-x: 45;
     -fx-background-color: #31b731;
 }
