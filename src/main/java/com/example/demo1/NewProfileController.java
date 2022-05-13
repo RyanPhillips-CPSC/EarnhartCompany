@@ -61,17 +61,19 @@ public class NewProfileController extends Controller implements Initializable {
     }
 
     @FXML
-    void submit(ActionEvent event) throws InterruptedException, IOException {
-        String host = "jdbc:mysql://localhost:3306/theearnhartcompany";
-        String user = "Ryan";
-        String password = "aTundeAdjuah_22!";
+    void submit(ActionEvent event) throws InterruptedException, IOException, ClassNotFoundException {
 
         String firstName = fNameText.getText().strip();
         String lastName = lNameText.getText().strip();
         String phone = phoneText.getText().strip();
         String email = emailText.getText().strip();
         String address = addressText.getText().strip();
+        //TEMPORARY
+        //String currentID = "1";
 
+        String host = "jdbc:mysql://localhost:3306/theearnhartcompany";
+        String user = "Ryan";
+        String password = "aTundeAdjuah_22!";
         String currentID = "";
 
         if (firstName.equals("") || lastName.equals("") || phone.equals("") || email.equals("") || address.equals("")) {

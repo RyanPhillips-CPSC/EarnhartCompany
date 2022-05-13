@@ -40,7 +40,7 @@ public class Main extends Application {
      * @param args
      * @throws FileNotFoundException
      */
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws ClassNotFoundException {
         associateAssignment();
         launch();
     }
@@ -48,26 +48,24 @@ public class Main extends Application {
     /**
      * Adds administrator login info to an ArrayList for easy access
      */
-    public static void associateAssignment() {
-        String userID, password;
+    public static void associateAssignment() throws ClassNotFoundException {
+        String username, password;
 
-        String host = "jdbc:mysql://localhost:3306/theearnhartcompany";
-        String user = "root";
-        String sqlPassword = "aTundeAdjuah_22!";
 
+        Class.forName("org.h2.Driver");
         try {
-            Connection connection = DriverManager.getConnection(host, user, sqlPassword);
-            PreparedStatement statement = connection.prepareStatement("select * from login where login.UserID <> 'null'");
-            ResultSet resultSet = statement.executeQuery();
+            Connection connection = DriverManager.getConnection("jdbc:h2:./edaDB","test","test");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from login where userID <> 'null'");
 
             while (resultSet.next()) {
-                userID = ("" + resultSet.getObject("UserID"));
-                password = ("" + resultSet.getObject("Password"));
-                Admin a = new Admin(userID,password);
+                username = ("" + resultSet.getObject("userID"));
+                password = ( "" + resultSet.getObject("password"));
+                Admin a = new Admin(username,password);
                 admins.add(a);
             }
-        } catch (SQLException e) {
-            System.out.println("ERROR CONNECTING TO DATABASE OR EXECUTING QUERY");
+        } catch (SQLException s) {
+            s.printStackTrace();
         }
     }
 
