@@ -30,6 +30,9 @@ public class NewOrderController extends Controller implements Initializable {
     private Scene scene;
 
     @FXML
+    private TextField autoCAD;
+
+    @FXML
     private Button generateButton;
 
     @FXML
@@ -98,6 +101,66 @@ public class NewOrderController extends Controller implements Initializable {
     @FXML
     private ComboBox<String> itemDropDown;
 
+    @FXML
+    private TextField priceText1;
+
+    @FXML
+    private TextField priceText10;
+
+    @FXML
+    private TextField priceText2;
+
+    @FXML
+    private TextField priceText3;
+
+    @FXML
+    private TextField priceText4;
+
+    @FXML
+    private TextField priceText5;
+
+    @FXML
+    private TextField priceText6;
+
+    @FXML
+    private TextField priceText7;
+
+    @FXML
+    private TextField priceText8;
+
+    @FXML
+    private TextField priceText9;
+
+    @FXML
+    private TextField itemText1;
+
+    @FXML
+    private TextField itemText10;
+
+    @FXML
+    private TextField itemText2;
+
+    @FXML
+    private TextField itemText3;
+
+    @FXML
+    private TextField itemText4;
+
+    @FXML
+    private TextField itemText5;
+
+    @FXML
+    private TextField itemText6;
+
+    @FXML
+    private TextField itemText7;
+
+    @FXML
+    private TextField itemText8;
+
+    @FXML
+    private TextField itemText9;
+
 
     @FXML
     void helpScene(ActionEvent event) throws IOException {
@@ -126,7 +189,7 @@ public class NewOrderController extends Controller implements Initializable {
     }
 
     @FXML
-    void generateItems(ActionEvent event) {
+    void generateItems(ActionEvent event) throws SQLException {
         if (generated) {
             addItems(event);
         } else {
@@ -221,21 +284,366 @@ public class NewOrderController extends Controller implements Initializable {
         }
     }
 
-    private void addItems(ActionEvent event) {
+    private void addItems(ActionEvent event) throws SQLException {
+        String host = "jdbc:mysql://localhost:3306/theearnhartcompany";
+        String user = "Ryan";
+        String password = "aTundeAdjuah_22!";
 
-        //TODO -- create set in clientprofile and add items to it
+        Connection connection = null;
+        PreparedStatement statement = null;
+        boolean valid = false;
+        boolean goodDouble = false;
+
+        double p1 = 0;double p2 = 0;double p3 = 0;double p4 = 0;double p5 = 0;
+        double p6 = 0;double p10 = 0;double p7 = 0;double p8 = 0;double p9 = 0;
 
 
+        switch (itemQuantity) {
+            case 1:
+                try {
+                    p1 = Double.parseDouble(priceText1.getText());
+                    goodDouble = true;
+                } catch (NumberFormatException i) {
+                }
+                break;
+            case 2:
+                p1 = Double.parseDouble(priceText1.getText());
+                p2 = Double.parseDouble(priceText1.getText());
+                goodDouble = true;
+                break;
+            case 3:
+                p1 = Double.parseDouble(priceText1.getText());
+                p2 = Double.parseDouble(priceText1.getText());
+                p3 = Double.parseDouble(priceText1.getText());
+                goodDouble = true;
+                break;
+            case 4:
+                p1 = Double.parseDouble(priceText1.getText());
+                p2 = Double.parseDouble(priceText1.getText());
+                p3 = Double.parseDouble(priceText1.getText());
+                p4 = Double.parseDouble(priceText1.getText());
+                goodDouble = true;
+                break;
+            case 5:
+                p1 = Double.parseDouble(priceText1.getText());
+                p2 = Double.parseDouble(priceText1.getText());
+                p3 = Double.parseDouble(priceText1.getText());
+                p4 = Double.parseDouble(priceText1.getText());
+                p5 = Double.parseDouble(priceText1.getText());
+                goodDouble = true;
+                break;
+            case 6:
+                p1 = Double.parseDouble(priceText1.getText());
+                p2 = Double.parseDouble(priceText1.getText());
+                p3 = Double.parseDouble(priceText1.getText());
+                p4 = Double.parseDouble(priceText1.getText());
+                p5 = Double.parseDouble(priceText1.getText());
+                p6 = Double.parseDouble(priceText1.getText());
+                goodDouble = true;
+                break;
+            case 7:
+                p1 = Double.parseDouble(priceText1.getText());
+                p2 = Double.parseDouble(priceText1.getText());
+                p3 = Double.parseDouble(priceText1.getText());
+                p4 = Double.parseDouble(priceText1.getText());
+                p5 = Double.parseDouble(priceText1.getText());
+                p6 = Double.parseDouble(priceText1.getText());
+                p7 = Double.parseDouble(priceText1.getText());
+                goodDouble = true;
+                break;
+            case 8:
+                p1 = Double.parseDouble(priceText1.getText());
+                p2 = Double.parseDouble(priceText1.getText());
+                p3 = Double.parseDouble(priceText1.getText());
+                p4 = Double.parseDouble(priceText1.getText());
+                p5 = Double.parseDouble(priceText1.getText());
+                p6 = Double.parseDouble(priceText1.getText());
+                p7 = Double.parseDouble(priceText1.getText());
+                p8 = Double.parseDouble(priceText1.getText());
+                goodDouble = true;
+                break;
+            case 9:
+                p1 = Double.parseDouble(priceText1.getText());
+                p2 = Double.parseDouble(priceText1.getText());
+                p3 = Double.parseDouble(priceText1.getText());
+                p4 = Double.parseDouble(priceText1.getText());
+                p5 = Double.parseDouble(priceText1.getText());
+                p6 = Double.parseDouble(priceText1.getText());
+                p7 = Double.parseDouble(priceText1.getText());
+                p8 = Double.parseDouble(priceText1.getText());
+                p9 = Double.parseDouble(priceText1.getText());
+                goodDouble = true;
+                break;
+            case 10:
+                p1 = Double.parseDouble(priceText1.getText());
+                p2 = Double.parseDouble(priceText1.getText());
+                p3 = Double.parseDouble(priceText1.getText());
+                p4 = Double.parseDouble(priceText1.getText());
+                p5 = Double.parseDouble(priceText1.getText());
+                p6 = Double.parseDouble(priceText1.getText());
+                p7 = Double.parseDouble(priceText1.getText());
+                p8 = Double.parseDouble(priceText1.getText());
+                p9 = Double.parseDouble(priceText1.getText());
+                p10 = Double.parseDouble(priceText1.getText());
+                goodDouble = true;
+                break;
+        }
 
+        if (goodDouble) {
+            switch (itemQuantity) {
+                case 1:
+                    if (!(itemText1.getText().equals("") || priceText1.getText().equals(""))) {
+                        valid = true;
+                    }
+                    break;
+                case 2:
+                    if (!(itemText1.getText().equals("") || priceText1.getText().equals("") ||
+                            itemText2.getText().equals("") || priceText2.getText().equals(""))) {
+                        valid = true;
+                    }
+                    break;
+                case 3:
+                    if (!(itemText1.getText().equals("") || priceText1.getText().equals("") ||
+                            itemText2.getText().equals("") || priceText2.getText().equals("") ||
+                            itemText3.getText().equals("") || priceText3.getText().equals(""))) {
+                        valid = true;
+                    }
+                    break;
+                case 4:
+                    if (!(itemText1.getText().equals("") || priceText1.getText().equals("") ||
+                            itemText2.getText().equals("") || priceText2.getText().equals("") ||
+                            itemText3.getText().equals("") || priceText3.getText().equals("") ||
+                            itemText4.getText().equals("") || priceText4.getText().equals(""))) {
+                        valid = true;
+                    }
+                    break;
+                case 5:
+                    if (!(itemText1.getText().equals("") || priceText1.getText().equals("") ||
+                            itemText2.getText().equals("") || priceText2.getText().equals("") ||
+                            itemText3.getText().equals("") || priceText3.getText().equals("") ||
+                            itemText4.getText().equals("") || priceText4.getText().equals("") ||
+                            itemText5.getText().equals("") || priceText5.getText().equals(""))) {
+                        valid = true;
+                    }
+                    break;
+                case 6:
+                    if (!(itemText1.getText().equals("") || priceText1.getText().equals("") ||
+                            itemText2.getText().equals("") || priceText2.getText().equals("") ||
+                            itemText3.getText().equals("") || priceText3.getText().equals("") ||
+                            itemText4.getText().equals("") || priceText4.getText().equals("") ||
+                            itemText5.getText().equals("") || priceText5.getText().equals("") ||
+                            itemText6.getText().equals("") || priceText6.getText().equals(""))) {
+                        valid = true;
+                    }
+                    break;
+                case 7:
+                    if (!(itemText1.getText().equals("") || priceText1.getText().equals("") ||
+                            itemText2.getText().equals("") || priceText2.getText().equals("") ||
+                            itemText3.getText().equals("") || priceText3.getText().equals("") ||
+                            itemText4.getText().equals("") || priceText4.getText().equals("") ||
+                            itemText5.getText().equals("") || priceText5.getText().equals("") ||
+                            itemText6.getText().equals("") || priceText6.getText().equals("") ||
+                            itemText7.getText().equals("") || priceText7.getText().equals(""))) {
+                        valid = true;
+                    }
+                    break;
+                case 8:
+                    if (!(itemText1.getText().equals("") || priceText1.getText().equals("") ||
+                            itemText2.getText().equals("") || priceText2.getText().equals("") ||
+                            itemText3.getText().equals("") || priceText3.getText().equals("") ||
+                            itemText4.getText().equals("") || priceText4.getText().equals("") ||
+                            itemText5.getText().equals("") || priceText5.getText().equals("") ||
+                            itemText6.getText().equals("") || priceText6.getText().equals("") ||
+                            itemText7.getText().equals("") || priceText7.getText().equals("") ||
+                            itemText8.getText().equals("") || priceText8.getText().equals(""))) {
+                        valid = true;
+                    }
+                    break;
+                case 9:
+                    if (!(itemText1.getText().equals("") || priceText1.getText().equals("") ||
+                            itemText2.getText().equals("") || priceText2.getText().equals("") ||
+                            itemText3.getText().equals("") || priceText3.getText().equals("") ||
+                            itemText4.getText().equals("") || priceText4.getText().equals("") ||
+                            itemText5.getText().equals("") || priceText5.getText().equals("") ||
+                            itemText6.getText().equals("") || priceText6.getText().equals("") ||
+                            itemText7.getText().equals("") || priceText7.getText().equals("") ||
+                            itemText8.getText().equals("") || priceText8.getText().equals("") ||
+                            itemText9.getText().equals("") || priceText9.getText().equals(""))) {
+                        valid = true;
+                    }
+                    break;
+                case 10:
+                    if (!(itemText1.getText().equals("") || priceText1.getText().equals("") ||
+                            itemText2.getText().equals("") || priceText2.getText().equals("") ||
+                            itemText3.getText().equals("") || priceText3.getText().equals("") ||
+                            itemText4.getText().equals("") || priceText4.getText().equals("") ||
+                            itemText5.getText().equals("") || priceText5.getText().equals("") ||
+                            itemText6.getText().equals("") || priceText6.getText().equals("") ||
+                            itemText7.getText().equals("") || priceText7.getText().equals("") ||
+                            itemText8.getText().equals("") || priceText8.getText().equals("") ||
+                            itemText9.getText().equals("") || priceText9.getText().equals("") ||
+                            itemText10.getText().equals("") || priceText10.getText().equals(""))) {
+                        valid = true;
+                    }
+                    break;
+            }
+        }
 
+        if ((valid) && (goodDouble)) {
+            switch (itemQuantity) {
 
-
-
-        System.out.println(itemQuantity);
+                case 1:
+                    connection = DriverManager.getConnection(host, user, password);
+                    statement = connection.prepareStatement("insert into items values ('" + itemText1.getText() + "', '" + p1 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    break;
+                case 2:
+                    connection = DriverManager.getConnection(host, user, password);
+                    statement = connection.prepareStatement("insert into items values ('" + itemText1.getText() + "', '" + p1 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText2.getText() + "', '" + p2 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    break;
+                case 3:
+                    connection = DriverManager.getConnection(host, user, password);
+                    statement = connection.prepareStatement("insert into items values ('" + itemText1.getText() + "', '" + p1 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText2.getText() + "', '" + p2 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText3.getText() + "', '" + p3 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    break;
+                case 4:
+                    connection = DriverManager.getConnection(host, user, password);
+                    statement = connection.prepareStatement("insert into items values ('" + itemText1.getText() + "', '" + p1 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText2.getText() + "', '" + p2 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText3.getText() + "', '" + p3 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText4.getText() + "', '" + p4 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    break;
+                case 5:
+                    connection = DriverManager.getConnection(host, user, password);
+                    statement = connection.prepareStatement("insert into items values ('" + itemText1.getText() + "', '" + p1 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText2.getText() + "', '" + p2 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText3.getText() + "', '" + p3 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText4.getText() + "', '" + p4 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText5.getText() + "', '" + p5 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    break;
+                case 6:
+                    connection = DriverManager.getConnection(host, user, password);
+                    statement = connection.prepareStatement("insert into items values ('" + itemText1.getText() + "', '" + p1 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText2.getText() + "', '" + p2 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText3.getText() + "', '" + p3 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText4.getText() + "', '" + p4 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText5.getText() + "', '" + p5 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText6.getText() + "', '" + p6 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    break;
+                case 7:
+                    connection = DriverManager.getConnection(host, user, password);
+                    statement = connection.prepareStatement("insert into items values ('" + itemText1.getText() + "', '" + p1 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText2.getText() + "', '" + p2 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText3.getText() + "', '" + p3 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText4.getText() + "', '" + p4 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText5.getText() + "', '" + p5 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText6.getText() + "', '" + p6 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText7.getText() + "', '" + p7 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    break;
+                case 8:
+                    connection = DriverManager.getConnection(host, user, password);
+                    statement = connection.prepareStatement("insert into items values ('" + itemText1.getText() + "', '" + p1 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText2.getText() + "', '" + p2 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText3.getText() + "', '" + p3 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText4.getText() + "', '" + p4 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText5.getText() + "', '" + p5 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText6.getText() + "', '" + p6 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText7.getText() + "', '" + p7 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText8.getText() + "', '" + p8 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    break;
+                case 9:
+                    connection = DriverManager.getConnection(host, user, password);
+                    statement = connection.prepareStatement("insert into items values ('" + itemText1.getText() + "', '" + p1 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText2.getText() + "', '" + p2 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText3.getText() + "', '" + p3 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText4.getText() + "', '" + p4 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText5.getText() + "', '" + p5 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText6.getText() + "', '" + p6 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText7.getText() + "', '" + p7 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText8.getText() + "', '" + p8 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText9.getText() + "', '" + p9 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    break;
+                case 10:
+                    connection = DriverManager.getConnection(host, user, password);
+                    statement = connection.prepareStatement("insert into items values ('" + itemText1.getText() + "', '" + p1 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText2.getText() + "', '" + p2 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText3.getText() + "', '" + p3 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText4.getText() + "', '" + p4 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText5.getText() + "', '" + p5 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText6.getText() + "', '" + p6 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText7.getText() + "', '" + p7 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText8.getText() + "', '" + p8 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText9.getText() + "', '" + p9 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    statement = connection.prepareStatement("insert into items values ('" + itemText10.getText() + "', '" + p10 + "', '" + Profile.getClientID() + "', '" + updateOrderNumber + "')");
+                    statement.executeUpdate();
+                    break;
+            }
+            generateButton.setDisable(true);
+            submitButton.setDisable(false);
+        } else {
+            invalidLabel.setVisible(true);
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        submitButton.setDisable(true);
+
         itemQuantity = 0;
         gridPane2.setVisible(false);
         gridPane11.setVisible(false);
@@ -247,8 +655,6 @@ public class NewOrderController extends Controller implements Initializable {
         gridPane8.setVisible(false);
         gridPane9.setVisible(false);
         gridPane10.setVisible(false);
-
-        submitButton.setDisable(true);
 
         itemDropDown.getItems().add("1");
         itemDropDown.getItems().add("2");
@@ -300,11 +706,13 @@ public class NewOrderController extends Controller implements Initializable {
     @FXML
     void submit(ActionEvent event) {
         if (invoicePaid.getSelectionModel().isEmpty() || invoiceSent.getSelectionModel().isEmpty() ||
-                shipped.getSelectionModel().isEmpty() || refunded.getSelectionModel().isEmpty() ||
-                shipDate.getText().equals("") || refundDate.getText().equals("")) {
+                shipped.getSelectionModel().isEmpty() || refunded.getSelectionModel().isEmpty()) {
             invalidLabel.setVisible(true);
         } else {
-            //TODO -- SUBMIT ORDER
+
+
+
+
         }
     }
 }

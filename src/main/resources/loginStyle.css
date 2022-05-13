@@ -23,7 +23,25 @@
 #menuBar {
     -fx-opacity: .8;
 }
-#progressIndicator {
-    -fx-translate-y: 150;
-    -fx-translate-x: 150;
+#the {
+    -fx-text-fill: white;
+    -fx-font-family: SansSerif;
+    -fx-font-size: 20;
+    -fx-translate-x: -4;
+}
+#company {
+    -fx-text-fill: white;
+    -fx-font-family: SansSerif;
+    -fx-font-size: 20;
+    -fx-translate-x: 1;
+}
+#earnhart {
+    -fx-text-fill: white;
+    -fx-font-family: SansSerif;
+    -fx-font-size: 27;
+    -fx-translate-y: -2;
+}
+#logoHBox {
+    -fx-translate-y: 50;
+    -fx-translate-x: 40;
 }

@@ -101,16 +101,17 @@ public class NewProfileController extends Controller implements Initializable {
             } catch (SQLException e) {
                 System.out.println("" + e + "");
             }
-            clientMenu(firstName,lastName,email,address,phone,event);
+            clientMenu(firstName,lastName,email,address,phone,event,currentID);
         }
     }
 
-    private void clientMenu(String firstName, String lastName, String email, String address, String phone, ActionEvent event) throws IOException {
+    private void clientMenu(String firstName, String lastName, String email, String address, String phone, ActionEvent event, String currentID) throws IOException {
         Profile.setFirstName(firstName);
         Profile.setLastName(lastName);
         Profile.setEmail(email);
         Profile.setAddress(address);
         Profile.setPhone(phone);
+        Profile.setClientID(currentID);
         FXMLLoader loader = new FXMLLoader(Controller.class.getResource("ClientMenu.fxml"));
         Parent mainCallWindowFXML = loader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

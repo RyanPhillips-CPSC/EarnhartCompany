@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -61,5 +62,12 @@
             </Group>
          </center>
       </BorderPane>
+      <HBox fx:id="logoHBox" prefHeight="114.0" prefWidth="362.0">
+         <children>
+            <Label fx:id="the" text="THE" />
+            <Label fx:id="earnhart" text="EARNHART" />
+            <Label fx:id="company" text="COMPANY" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

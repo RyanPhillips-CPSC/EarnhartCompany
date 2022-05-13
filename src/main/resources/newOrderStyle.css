@@ -2,15 +2,17 @@
     -fx-background-color: bisque;
 }
 #mainLogo {
-    -fx-text-fill: #810000;
+    -fx-text-fill: #313131;
     -fx-font-size: 30;
-    -fx-font-family: SansSerif;
+    -fx-font-family: "Segoe UI Semilight";
+    -fx-translate-x: 8;
 }
 #topRightLabel {
-    -fx-font-family: SansSerif;
+    -fx-text-fill: #313131;
+    -fx-font-family: "Segoe UI Semilight"
 }
 #mainLabel {
-    -fx-font-family: SansSerif;
+    -fx-font-family: "Segoe UI Light";
     -fx-text-fill: #810000;
 }
 #menuHBox {
@@ -24,9 +26,9 @@
     -fx-background-repeat: no-repeat;
 }
 .button {
-    -fx-background-color: white;
+    -fx-background-color: #f1f1f1;
     -fx-translate-x: 15;
-    -fx-font-family: "Book Antiqua";
+    -fx-font-family: "Segoe UI Light";
     -fx-font-size: 16;
 }
 #settingsButton {
@@ -44,21 +46,22 @@
     -fx-translate-x: 150;
 }
 #border {
-    -fx-background-color: black;
+    -fx-background-color: #d7d6d6;
 }
 #optionLabel {
-    -fx-text-fill: #e1c3c3;
+    -fx-text-fill: #938181;
     -fx-font-family: "Bell MT";
     -fx-font-size: 13;
 }
 #toolBar {
-    -fx-background-color: black;
+    -fx-background-color: #d7d6d6;
 }
 #rightPane {
-    -fx-background-color: black;
+    -fx-background-color: #d7d6d6;
 }
 #versionLabel {
-    -fx-font-family: SansSerif;
+    -fx-translate-y: 5;
+    -fx-font-family: "Segoe UI";
     -fx-text-fill: #810000;
     -fx-padding: 10 10 0 10;
 }
@@ -85,16 +88,18 @@
     -fx-background-color: rgba(255, 255, 255, 0.7);
 }
 #centerLabel {
-    -fx-font-family: "Book Antiqua";
+    -fx-font-family: "Segoe UI Light";
     -fx-font-size: 14;
 }
 #boldLabel {
-    -fx-font-family: "Book Antiqua";
+    -fx-font-family: "Segoe UI Light";
     -fx-font-size: 15;
     -fx-font-weight: bold;
+    -fx-translate-y: -15;
+    -fx-translate-x: -1;
 }
 #boldLabel2 {
-    -fx-font-family: "Book Antiqua";
+    -fx-font-family: "Segoe UI Light";
     -fx-font-size: 15;
     -fx-font-weight: bold;
     -fx-translate-y: -10;
@@ -112,16 +117,16 @@
     -fx-background-color: #9395ff;
 }
 #invalidLabel {
-    -fx-translate-x: 235;
+    -fx-translate-x: 245;
     -fx-translate-y: 3;
-    -fx-font-family: SansSerif;
+    -fx-font-family: "Segoe UI Light";
     -fx-text-fill: red;
     -fx-font-size: 13;
 }
 #clientLabel {
     -fx-translate-x: 40;
     -fx-translate-y: -5;
-    -fx-font-family: "Bell MT";
+    -fx-font-family: "Segoe UI Light";
     -fx-font-size: 20;
 }
 #clientHBox {
@@ -149,8 +154,26 @@
     -fx-padding: 10;
 }
 #nameLabel11 {
+    -fx-font-family: "Segoe UI Light";
     -fx-translate-x: 3;
 }
 #priceLabel {
+    -fx-font-family: "Segoe UI Light";
     -fx-translate-x: 3;
+}
+#orderNumber {
+    -fx-font-family: "Segoe UI Light";
+    -fx-translate-y: -15;
+    -fx-translate-x: -1;
+}
+#backButton {
+    -fx-font-family: "Segoe UI Light";
+    -fx-translate-x: 45;
+    -fx-background-color: #31b731;
+}
+#homeButton {
+    -fx-translate-x: 30;
+}
+#separator {
+    -fx-translate-x: 15;
 }

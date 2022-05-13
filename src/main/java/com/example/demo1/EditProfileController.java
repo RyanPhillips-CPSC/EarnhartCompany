@@ -145,6 +145,7 @@ public class EditProfileController extends Controller implements Initializable {
         String user = "Ryan";
         String password = "aTundeAdjuah_22!";
         String newText = updateText.getText().strip();
+        Connection connection = null;
 
         if (newText == "") {
             invalidLabel.setVisible(true);
@@ -152,7 +153,7 @@ public class EditProfileController extends Controller implements Initializable {
             switch (x) {
                 case "First Name":
                     try {
-                        Connection connection = DriverManager.getConnection(host, user, password);
+                        connection = DriverManager.getConnection(host, user, password);
                         PreparedStatement statement = connection.prepareStatement("update clientprofile set FName = '" + newText + "' where Email = '" + Profile.getEmail() + "'");
                         statement.executeUpdate();
                     } catch (SQLException e) {
@@ -164,7 +165,7 @@ public class EditProfileController extends Controller implements Initializable {
                     break;
                 case "Last Name":
                     try {
-                        Connection connection = DriverManager.getConnection(host, user, password);
+                        connection = DriverManager.getConnection(host, user, password);
                         PreparedStatement statement = connection.prepareStatement("update clientprofile set LName = '" + newText + "' where Email = '" + Profile.getEmail() + "'");
                         statement.executeUpdate();
                     } catch (SQLException e) {
@@ -176,7 +177,7 @@ public class EditProfileController extends Controller implements Initializable {
                     break;
                 case "Phone Number":
                     try {
-                        Connection connection = DriverManager.getConnection(host, user, password);
+                        connection = DriverManager.getConnection(host, user, password);
                         PreparedStatement statement = connection.prepareStatement("update clientprofile set Phone = '" + newText + "' where Email = '" + Profile.getEmail() + "'");
                         statement.executeUpdate();
                     } catch (SQLException e) {
@@ -188,7 +189,7 @@ public class EditProfileController extends Controller implements Initializable {
                     break;
                 case "Email Address":
                     try {
-                        Connection connection = DriverManager.getConnection(host, user, password);
+                        connection = DriverManager.getConnection(host, user, password);
                         PreparedStatement statement = connection.prepareStatement("update clientprofile set Email = '" + newText + "' where Phone = '" + Profile.getPhone() + "'");
                         statement.executeUpdate();
                     } catch (SQLException e) {
@@ -200,7 +201,7 @@ public class EditProfileController extends Controller implements Initializable {
                     break;
                 case "Shipping Address":
                     try {
-                        Connection connection = DriverManager.getConnection(host, user, password);
+                        connection = DriverManager.getConnection(host, user, password);
                         PreparedStatement statement = connection.prepareStatement("update clientprofile set Address = '" + newText + "' where Email = '" + Profile.getEmail() + "'");
                         statement.executeUpdate();
                     } catch (SQLException e) {
