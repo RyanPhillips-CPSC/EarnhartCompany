@@ -45,3 +45,6 @@
     -fx-translate-y: 50;
     -fx-translate-x: 40;
 }
+#InvalidLabel {
+    -fx-translate-x: 12;
+}

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo1/ConsultationController.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo1/EditConsultationController.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo1/EditProfileController.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo1/Main.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo1/NewOrderController.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo1/NewProfileController.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo1/SelectController.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/ConsultationController.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/EditConsultationController.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/EditProfileController.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/Main.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/NewOrderController.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/NewProfileController.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/SelectController.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/sqlCreate.sql" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/sqlReset.sql" dialect="H2" />
   </component>
 </project>
